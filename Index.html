@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deriv Partner Operations Academy</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for professional look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .brand-red {
+            color: #ff444f;
+        }
+        .bg-brand-red {
+            background-color: #ff444f;
+        }
+        .bg-brand-red-hover:hover {
+            background-color: #e03a44;
+        }
+        .border-brand-red {
+            border-color: #ff444f;
+        }
+        .focus-brand-red:focus {
+            outline: 2px solid #ff444f;
+        }
+        /* Custom scrollbar for simulator dashboard */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased min-h-screen flex flex-col">
+
+    <!-- TOP HEADER BAR -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Brand logo / title -->
+                <div class="flex items-center space-x-3">
+                    <div class="bg-brand-red text-white p-2 rounded-lg font-bold text-xl tracking-tight flex items-center justify-center shadow-md shadow-red-200">
+                        deriv
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-bold text-slate-900 leading-tight">Partner Operations Academy</h1>
+                        <p class="text-xs text-slate-500 font-medium tracking-wide uppercase">Finance & Marketing Training Hub</p>
+                    </div>
+                </div>
+                <!-- Mini Progress Tracker / Info badge -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <div class="bg-slate-100 px-3 py-1.5 rounded-full text-xs font-semibold text-slate-600 flex items-center">
+                        <span class="w-2.5 h-2.5 bg-green-500 rounded-full mr-2 animate-pulse"></span>
+                        Interactive Training Mode Active
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN HERO & NAVIGATION TABS -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- Welcome Alert banner -->
+        <div class="mb-8 bg-gradient-to-r from-red-50 to-rose-100 border-l-4 border-brand-red p-6 rounded-r-xl shadow-sm">
+            <div class="flex items-start">
+                <div class="flex-shrink-0 text-brand-red bg-white p-2 rounded-lg shadow-sm">
+                    <!-- SVG Info Icon -->
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                </div>
+                <div class="ml-4">
+                    <h3 class="text-base font-bold text-slate-900">Welcome to the Interactive Operations Sandbox</h3>
+                    <p class="mt-1 text-sm text-slate-600 leading-relaxed">
+                        This interactive learning tool is designed to train team members on how <strong>Arbitrary Markups</strong> and <strong>Affiliate Commissions</strong> are calculated, tier-checked, verified, and manually or automatically credited to partners.
+                    </p>
+                    <div class="mt-3 flex space-x-3 text-xs font-semibold text-brand-red">
+                        <span>💡 Quick Tip: Navigate using the tabs below to explore rules, processes, run interactive simulated crediting runs, and test your knowledge!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TABS NAV -->
+        <div class="border-b border-slate-200 mb-8 bg-white p-1 rounded-xl shadow-sm flex flex-wrap gap-1">
+            <button onclick="switchTab('knowledge-hub')" id="tab-knowledge-hub" class="flex-1 py-3 px-4 text-center rounded-lg font-semibold text-sm transition-all duration-150 flex items-center justify-center space-x-2 bg-brand-red text-white">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+                <span>1. Knowledge Hub</span>
+            </button>
+            <button onclick="switchTab('crediting-process')" id="tab-crediting-process" class="flex-1 py-3 px-4 text-center rounded-lg font-semibold text-sm transition-all duration-150 flex items-center justify-center space-x-2 text-slate-600 hover:text-slate-900 hover:bg-slate-50">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+                <span>2. Crediting Process & Checklist</span>
+            </button>
+            <button onclick="switchTab('interactive-simulator')" id="tab-interactive-simulator" class="flex-1 py-3 px-4 text-center rounded-lg font-semibold text-sm transition-all duration-150 flex items-center justify-center space-x-2 text-slate-600 hover:text-slate-900 hover:bg-slate-50">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>3. Crediting Desk Simulator</span>
+            </button>
+            <button onclick="switchTab('knowledge-check')" id="tab-knowledge-check" class="flex-1 py-3 px-4 text-center rounded-lg font-semibold text-sm transition-all duration-150 flex items-center justify-center space-x-2 text-slate-600 hover:text-slate-900 hover:bg-slate-50">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                </svg>
+                <span>4. Knowledge Check Quiz</span>
+            </button>
+        </div>
+
+        <!-- ================= TAB 1: KNOWLEDGE HUB ================= -->
+        <div id="content-knowledge-hub" class="space-y-12">
+            
+            <!-- SECTION A: ARBITRARY MARKUP -->
+            <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
+                <div class="flex items-center space-x-3 mb-6">
+                    <span class="p-2.5 rounded-xl bg-red-100 text-brand-red font-bold">01</span>
+                    <h2 class="text-2xl font-bold text-slate-900">Understanding Arbitrary Markup</h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                    <!-- Left: Explanation Points -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="bg-slate-50 p-6 rounded-xl border border-slate-100">
+                            <h3 class="text-lg font-bold text-slate-950 mb-3 flex items-center text-brand-red">
+                                <span class="w-2.5 h-2.5 bg-brand-red rounded-full mr-2"></span>
+                                What is Arbitrary Markup?
+                            </h3>
+                            <ul class="space-y-3.5 text-slate-600 text-sm">
+                                <li class="flex items-start">
+                                    <span class="text-brand-red font-bold mr-2">✦</span>
+                                    <span><strong>Monthly Commission:</strong> Paid specifically to API developers.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-brand-red font-bold mr-2">✦</span>
+                                    <span><strong>Markup Fee:</strong> This is an additional fee charged by third-party developers on trades completed through their custom apps.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-brand-red font-bold mr-2">✦</span>
+                                    <span><strong>Collection Agency:</strong> Deriv automatically collects this markup and handsomely pays it back to developers monthly.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-brand-red font-bold mr-2">✦</span>
+                                    <span><strong>Independent Stream:</strong> Distinct and decoupled from affiliate commissions that are based directly on referred clients' general activity.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Scenarios Interactive Picker -->
+                        <div>
+                            <h4 class="text-sm font-bold tracking-wide uppercase text-slate-400 mb-3">Earning Scenarios (Click to Preview)</h4>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                                <button onclick="selectScenario('both')" id="btn-scen-both" class="p-4 rounded-xl border-2 border-brand-red text-left bg-rose-50/50 hover:bg-rose-50 transition-all">
+                                    <div class="w-8 h-8 rounded-full bg-brand-red/10 flex items-center justify-center text-brand-red font-bold text-xs mb-2">++</div>
+                                    <span class="block text-sm font-bold text-slate-900">Partner & Dev</span>
+                                    <span class="block text-xs text-slate-500 mt-1">Gets affiliate payouts & app markups.</span>
+                                </button>
+                                <button onclick="selectScenario('dev')" id="btn-scen-dev" class="p-4 rounded-xl border border-slate-200 text-left bg-white hover:bg-slate-50 transition-all">
+                                    <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 font-bold text-xs mb-2">💻</div>
+                                    <span class="block text-sm font-bold text-slate-900">App Dev Only</span>
+                                    <span class="block text-xs text-slate-500 mt-1">Only earns trade markups through app.</span>
+                                </button>
+                                <button onclick="selectScenario('partner')" id="btn-scen-partner" class="p-4 rounded-xl border border-slate-200 text-left bg-white hover:bg-slate-50 transition-all">
+                                    <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 font-bold text-xs mb-2">👤</div>
+                                    <span class="block text-sm font-bold text-slate-900">Partner Only</span>
+                                    <span class="block text-xs text-slate-500 mt-1">Standard referred client commission.</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Card: Live Scenario Display -->
+                    <div class="lg:col-span-5">
+                        <div id="scenario-card" class="bg-gradient-to-b from-slate-900 to-slate-950 text-white rounded-2xl p-6 shadow-xl relative overflow-hidden h-full flex flex-col justify-between">
+                            <!-- Background pattern -->
+                            <div class="absolute inset-0 opacity-10 bg-grid-white"></div>
+                            
+                            <div class="relative z-10">
+                                <div class="flex justify-between items-center mb-6">
+                                    <span class="text-xs uppercase bg-brand-red px-2.5 py-1 rounded-full font-bold tracking-widest text-white">Scenario Preview</span>
+                                    <span class="text-xs text-slate-400 font-mono" id="scen-sub">Interactive Map</span>
+                                </div>
+
+                                <h3 class="text-xl font-extrabold text-white mb-4" id="scen-title">Partner + App Developer</h3>
+                                
+                                <div class="space-y-4 text-sm" id="scen-details">
+                                    <div class="bg-slate-800/80 p-3.5 rounded-lg border border-slate-700">
+                                        <p class="font-bold text-emerald-400 flex items-center">
+                                            <span class="mr-2">✓</span> Affiliate Commission
+                                        </p>
+                                        <p class="text-xs text-slate-300 mt-1">Earned from trades placed by referred clients through the custom developer app.</p>
+                                    </div>
+                                    <div class="bg-slate-800/80 p-3.5 rounded-lg border border-slate-700">
+                                        <p class="font-bold text-emerald-400 flex items-center">
+                                            <span class="mr-2">✓</span> App Markup Commission
+                                        </p>
+                                        <p class="text-xs text-slate-300 mt-1">Charged on each trade placed through the app, whether the user is affiliated with you or not.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Footer Tier Indicator -->
+                            <div class="relative z-10 mt-6 pt-6 border-t border-slate-850">
+                                <div class="flex items-center space-x-3 bg-emerald-500/10 border border-emerald-500/20 rounded-xl p-3" id="scen-tier-box">
+                                    <div class="w-3.5 h-3.5 bg-emerald-500 rounded-full flex-shrink-0 animate-pulse"></div>
+                                    <div>
+                                        <p class="text-xs font-bold text-emerald-400" id="scen-tier-title">Tiering Determination Eligibility</p>
+                                        <p class="text-[11px] text-slate-300" id="scen-tier-desc">Affiliate commissions generated under this scheme count towards the partner's monthly performance tiering calculation.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION B: AFFILIATE COMMISSION PROGRAMMES -->
+            <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
+                <div class="flex items-center space-x-3 mb-6">
+                    <span class="p-2.5 rounded-xl bg-red-100 text-brand-red font-bold">02</span>
+                    <h2 class="text-2xl font-bold text-slate-900">Deriv Affiliate Programme Plans</h2>
+                </div>
+
+                <!-- 4 Core Commission Structures -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <!-- Revenue Share -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 hover:shadow-md transition-shadow relative overflow-hidden flex flex-col justify-between">
+                        <div>
+                            <span class="text-2xl mb-3 block">📊</span>
+                            <h3 class="text-base font-bold text-slate-900 mb-2">Revenue Share</h3>
+                            <p class="text-xs text-slate-600 mb-3 bg-white p-2.5 rounded border border-slate-100 italic">
+                                "Affiliates earn a % of the monthly net profit that Deriv makes from referred clients' trading activities."
+                            </p>
+                        </div>
+                        <ul class="text-[11px] text-slate-500 space-y-1.5 pt-3 border-t border-slate-150">
+                            <li>• Applies to Deriv Trader, Deriv Bot, SmartTrader</li>
+                            <li>• Rates increase with performance tiers</li>
+                        </ul>
+                    </div>
+
+                    <!-- Turnover Plan -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 hover:shadow-md transition-shadow relative overflow-hidden flex flex-col justify-between">
+                        <div>
+                            <span class="text-2xl mb-3 block">🔄</span>
+                            <h3 class="text-base font-bold text-slate-900 mb-2">Turnover Plan</h3>
+                            <p class="text-xs text-slate-600 mb-3 bg-white p-2.5 rounded border border-slate-100 italic">
+                                "Earn commissions based directly on the total contract volume, regardless of winning or losing."
+                            </p>
+                        </div>
+                        <ul class="text-[11px] text-slate-500 space-y-1.5 pt-3 border-t border-slate-150">
+                            <li>• Options: up to 1.5% of trade stakes</li>
+                            <li>• Multipliers: up to 40% of trade fees</li>
+                            <li>• Lookbacks: up to 0.8% of trade stake</li>
+                        </ul>
+                    </div>
+
+                    <!-- CPA Plan -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 hover:shadow-md transition-shadow relative overflow-hidden flex flex-col justify-between">
+                        <div>
+                            <span class="text-2xl mb-3 block">📍</span>
+                            <h3 class="text-base font-bold text-slate-900 mb-2 flex items-center">
+                                CPA (Cost-per-Acquisition)
+                            </h3>
+                            <span class="inline-block text-[9px] bg-red-150 text-red-600 px-2 py-0.5 rounded-full font-bold mb-3 tracking-wide">EU CLIENTS ONLY</span>
+                            <p class="text-xs text-slate-600 mb-3 bg-white p-2.5 rounded border border-slate-100 italic">
+                                "Receive a one-time fixed payment of up to $100 USD when a client meets specific parameters."
+                            </p>
+                        </div>
+                        <ul class="text-[11px] text-slate-500 space-y-1.5 pt-3 border-t border-slate-150">
+                            <li>• Require deposit of min $100 USD</li>
+                            <li>• Funds must be used for active trading</li>
+                        </ul>
+                    </div>
+
+                    <!-- Master Partner Plan -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 hover:shadow-md transition-shadow relative overflow-hidden flex flex-col justify-between">
+                        <div>
+                            <span class="text-2xl mb-3 block">👥</span>
+                            <h3 class="text-base font-bold text-slate-900 mb-2">Master Partner Plan</h3>
+                            <p class="text-xs text-slate-600 mb-3 bg-white p-2.5 rounded border border-slate-100 italic">
+                                "Senior affiliates recruit sub-partners and earn passive income based on their overall team progress."
+                            </p>
+                        </div>
+                        <ul class="text-[11px] text-slate-500 space-y-1.5 pt-3 border-t border-slate-150">
+                            <li>• Earn 20% of sub-partners' earnings</li>
+                            <li>• Direct trading commissions included</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Interactive Reward Tier Estimator Slider -->
+                <div class="bg-slate-900 text-white rounded-2xl p-6 md:p-8">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-7 space-y-4">
+                            <span class="text-xs uppercase bg-brand-red text-white px-2.5 py-1 rounded-full font-bold">Interactive Tool</span>
+                            <h3 class="text-xl font-bold">Affiliate Tiering & Performance Bonus Estimator</h3>
+                            <p class="text-sm text-slate-400">
+                                Use the slider below to simulate a partner's monthly or quarterly average commissions. Watch how their assigned partner tier, reward percentage, and performance bonus structure automatically adjust.
+                            </p>
+                            
+                            <!-- Slider Range Input -->
+                            <div class="space-y-2 pt-4">
+                                <div class="flex justify-between text-xs text-slate-400 font-bold">
+                                    <span>Bronze ($0)</span>
+                                    <span>Silver ($500+)</span>
+                                    <span>Gold ($1K+)</span>
+                                    <span>Platinum ($5K+)</span>
+                                </div>
+                                <input type="range" id="commission-slider" min="0" max="7500" step="50" value="2500" oninput="calculateIncentives()" class="w-full accent-[#ff444f] cursor-pointer">
+                                <div class="flex justify-between text-sm font-bold text-slate-200">
+                                    <span>Selected Commission Value:</span>
+                                    <span class="text-brand-red text-lg" id="val-com-selected">$2,500.00</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Results Side Panel -->
+                        <div class="lg:col-span-5 bg-slate-800 p-6 rounded-xl border border-slate-700 flex flex-col justify-between h-full space-y-6">
+                            <!-- Tier Header -->
+                            <div class="flex justify-between items-center pb-4 border-b border-slate-700">
+                                <span class="text-xs uppercase tracking-wider text-slate-400 font-bold">Assigned Partner Tier</span>
+                                <span id="badge-tier" class="bg-yellow-500 text-slate-950 text-xs px-3 py-1 rounded font-bold uppercase tracking-wider">Gold Tier</span>
+                            </div>
+
+                            <!-- Calculations breakdown -->
+                            <div class="space-y-3 text-sm">
+                                <div class="flex justify-between">
+                                    <span class="text-slate-400">Current Month Reward Bonus:</span>
+                                    <span class="font-bold text-white" id="stat-reward-rate">+6% Extra Reward</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-slate-400">Total Reward Paid (This Month):</span>
+                                    <span class="font-bold text-emerald-400" id="stat-calc-payout">$150.00 Extra</span>
+                                </div>
+                                <hr class="border-slate-700">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <span class="text-slate-400 block">Quarterly Performance Bonus Status:</span>
+                                        <span class="text-[10px] text-slate-500 block leading-tight mt-0.5">(For keeping Platinum status consistently for 3 months)</span>
+                                    </div>
+                                    <span class="font-bold text-right" id="stat-bonus-status">Not Eligible</span>
+                                </div>
+                            </div>
+
+                            <div class="bg-slate-900 p-3 rounded text-[11px] text-slate-400 border border-slate-800">
+                                <strong>Payment Cycle Reminder:</strong> Tier rewards are credited automatically on the <strong>15th of each month</strong>. Quarterly performance bonuses are credited on the <strong>15th after each quarter</strong>.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ================= TAB 2: CREDITING PROCESS & CHECKLIST ================= -->
+        <div id="content-crediting-process" class="hidden space-y-8">
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
+                <div class="flex items-center justify-between border-b border-slate-100 pb-5 mb-8">
+                    <div class="flex items-center space-x-3">
+                        <span class="p-2.5 rounded-xl bg-indigo-50 text-indigo-600 font-bold">03</span>
+                        <h2 class="text-2xl font-bold text-slate-900">Commission Crediting Protocols</h2>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button onclick="toggleFlow('arbitrary')" id="btn-flow-arbitrary" class="px-4 py-2 text-xs font-bold rounded-lg border border-brand-red bg-brand-red text-white transition-all">Arbitrary Markup Flow</button>
+                        <button onclick="toggleFlow('affiliate')" id="btn-flow-affiliate" class="px-4 py-2 text-xs font-bold rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 transition-all">Affiliate Flow</button>
+                    </div>
+                </div>
+
+                <!-- PROGRESS BAR COMPONENT -->
+                <div class="mb-12 relative">
+                    <!-- Progress line -->
+                    <div class="absolute top-1/2 left-0 w-full h-1 bg-slate-200 -translate-y-1/2 z-0"></div>
+                    <div id="interactive-progress" class="absolute top-1/2 left-0 w-1/4 h-1 bg-brand-red -translate-y-1/2 z-0 transition-all duration-300"></div>
+
+                    <!-- Steps Container -->
+                    <div class="relative z-10 flex justify-between">
+                        <!-- Step 1 -->
+                        <div class="flex flex-col items-center">
+                            <button onclick="selectStep(1)" id="step-node-1" class="w-10 h-10 rounded-full bg-brand-red text-white flex items-center justify-center font-bold text-sm shadow-md transition-all">1</button>
+                            <span class="text-[11px] font-bold mt-2 text-slate-950 uppercase tracking-wider text-center max-w-[80px]">Compliance</span>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="flex flex-col items-center">
+                            <button onclick="selectStep(2)" id="step-node-2" class="w-10 h-10 rounded-full bg-slate-200 text-slate-600 flex items-center justify-center font-bold text-sm transition-all">2</button>
+                            <span class="text-[11px] font-bold mt-2 text-slate-600 uppercase tracking-wider text-center max-w-[80px]">Marketing</span>
+                        </div>
+                        <!-- Step 3 -->
+                        <div class="flex flex-col items-center">
+                            <button onclick="selectStep(3)" id="step-node-3" class="w-10 h-10 rounded-full bg-slate-200 text-slate-600 flex items-center justify-center font-bold text-sm transition-all">3</button>
+                            <span class="text-[11px] font-bold mt-2 text-slate-600 uppercase tracking-wider text-center max-w-[80px]">Submission</span>
+                        </div>
+                        <!-- Step 4 -->
+                        <div class="flex flex-col items-center">
+                            <button onclick="selectStep(4)" id="step-node-4" class="w-10 h-10 rounded-full bg-slate-200 text-slate-600 flex items-center justify-center font-bold text-sm transition-all">4</button>
+                            <span class="text-[11px] font-bold mt-2 text-slate-600 uppercase tracking-wider text-center max-w-[80px]">Finance</span>
+                        </div>
+                        <!-- Step 5 -->
+                        <div class="flex flex-col items-center">
+                            <button onclick="selectStep(5)" id="step-node-5" class="w-10 h-10 rounded-full bg-slate-200 text-slate-600 flex items-center justify-center font-bold text-sm transition-all">5</button>
+                            <span class="text-[11px] font-bold mt-2 text-slate-600 uppercase tracking-wider text-center max-w-[80px]">Execution</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP DETAIL CARDS -->
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-6 mb-8 relative">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+                        <div>
+                            <span class="text-xs font-bold text-brand-red uppercase tracking-wider" id="active-step-lbl">STEP 1 OF 5</span>
+                            <h3 class="text-xl font-bold text-slate-900" id="active-step-title">Compliance List Approval</h3>
+                        </div>
+                        <span class="mt-2 md:mt-0 px-3 py-1 rounded-full text-xs font-bold bg-yellow-100 text-yellow-800" id="active-step-actor">Compliance Team</span>
+                    </div>
+
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4" id="active-step-desc">
+                        The Compliance Team reviews regulatory checks and partner eligibility. They compile and finalize the official list of partners who are "OK to Pay" and share the list with the Marketing Team.
+                    </p>
+
+                    <div class="bg-white p-4 rounded-lg border border-slate-100 text-xs space-y-2">
+                        <span class="font-bold text-slate-400 uppercase tracking-wider block">Key Deliverable:</span>
+                        <div class="flex items-center text-slate-700" id="active-step-deliverable">
+                            📋 Official approved list shared via email or secure drive.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DUAL CHECKLIST & VERSION SUMMARY -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Left: Commission Types Reference Checklist -->
+                    <div class="space-y-6">
+                        <div class="border border-slate-200 rounded-xl p-6 bg-white shadow-sm">
+                            <h3 class="text-sm font-bold tracking-wide uppercase text-slate-400 mb-4">Manual vs Automated Map</h3>
+                            
+                            <!-- Tab Content for Arbitrary -->
+                            <div id="type-map-arbitrary" class="space-y-4">
+                                <div class="p-3.5 bg-rose-50/50 rounded-xl border border-rose-100">
+                                    <h4 class="font-bold text-sm text-slate-900">Arbitrary Markup V1 (DSVG)</h4>
+                                    <p class="text-xs text-slate-500 mt-1">Processed manually. Credited specifically through <strong>BackOffice V1</strong>.</p>
+                                </div>
+                                <div class="p-3.5 bg-rose-50/50 rounded-xl border border-rose-100">
+                                    <h4 class="font-bold text-sm text-slate-900">Arbitrary Markup V2 (DCI)</h4>
+                                    <p class="text-xs text-slate-500 mt-1">Processed manually. Credited specifically through <strong>BackOffice V2</strong>.</p>
+                                </div>
+                            </div>
+
+                            <!-- Tab Content for Affiliate (Hidden initially) -->
+                            <div id="type-map-affiliate" class="hidden space-y-4">
+                                <div class="p-3.5 bg-blue-50/50 rounded-xl border border-blue-100">
+                                    <h4 class="font-bold text-sm text-slate-900">Manual (V1 Platforms Only)</h4>
+                                    <ul class="text-xs text-slate-500 mt-1 space-y-1">
+                                        <li>• Affiliate – MyAffiliate (DSVG)</li>
+                                        <li>• Affiliate – Dynamic Work (DW)</li>
+                                        <li>• Retrospective Commission</li>
+                                    </ul>
+                                </div>
+                                <div class="p-3.5 bg-emerald-50/50 rounded-xl border border-emerald-100">
+                                    <h4 class="font-bold text-sm text-slate-900">100% Automated (BackOffice Commission Service)</h4>
+                                    <ul class="text-xs text-slate-500 mt-1 space-y-1">
+                                        <li>• Affiliate Commission V2</li>
+                                        <li>• Partner Tier Reward</li>
+                                        <li>• Partner Quarterly Bonus</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Visual Checklist Interactive -->
+                    <div class="border border-slate-200 rounded-xl p-6 bg-white shadow-sm">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-sm font-bold tracking-wide uppercase text-slate-400">CSV Field Verification Checklist</h3>
+                            <span class="text-xs bg-slate-100 px-2.5 py-0.5 rounded text-slate-500 font-bold" id="checklist-type-indicator">Arbitrary V2 Mode</span>
+                        </div>
+                        <p class="text-xs text-slate-500 mb-4">The payment CSV must follow standard formatting rules. Verify that all corresponding fields are 100% accurate before processing payments.</p>
+                        
+                        <div class="space-y-3" id="checklist-render">
+                            <!-- JS loaded dynamic checkboxes based on mode selected -->
+                        </div>
+
+                        <div class="mt-4 p-3 bg-yellow-50 text-[11px] text-yellow-800 rounded-lg border border-yellow-100 font-medium leading-relaxed">
+                            ⚠️ <strong>Crucial Warning:</strong> If any discrepancies or mismatch in currency, Client IDs, or wallet values are encountered, Finance must <strong>immediately halt processing</strong> and raise the issue in the <code>#partners_payment</code> Slack channel. Do not guess parameters!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ================= TAB 3: THE PROCESS SIMULATOR ================= -->
+        <div id="content-interactive-simulator" class="hidden space-y-8">
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
+                <div class="mb-6">
+                    <span class="text-xs uppercase bg-brand-red text-white px-2.5 py-1 rounded-full font-bold">Simulator Challenge</span>
+                    <h2 class="text-2xl font-bold text-slate-900 mt-2">The Operations Desk Simulator</h2>
+                    <p class="text-sm text-slate-500">Step into the shoes of an operations desk officer. Your task is to process incoming payment requests sent by the Marketing Team. Audit the records carefully against the training checklist!</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                    <!-- Left Column: Operations Dashboard -->
+                    <div class="lg:col-span-8 space-y-6">
+                        <!-- Request Details Header -->
+                        <div class="bg-slate-900 text-white rounded-xl p-5 shadow-sm space-y-4">
+                            <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+                                <div>
+                                    <span class="text-[10px] uppercase font-mono tracking-wider text-slate-400">Incoming Ticket ID</span>
+                                    <h4 class="text-sm font-mono font-bold text-brand-red" id="sim-ticket-id">#TKT-2026-0041</h4>
+                                </div>
+                                <span class="bg-yellow-500/10 border border-yellow-500/20 text-yellow-500 text-xs px-2.5 py-1 rounded font-bold" id="sim-ticket-status">Pending Review</span>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+                                <div>
+                                    <span class="text-slate-400 block mb-0.5">Request Type:</span>
+                                    <span class="font-bold text-white text-sm" id="sim-request-type">Arbitrary Markup V2 (DCI)</span>
+                                </div>
+                                <div>
+                                    <span class="text-slate-400 block mb-0.5">Submitted Via:</span>
+                                    <span class="font-bold text-slate-200 text-sm flex items-center">
+                                        <span class="w-2 h-2 rounded-full bg-green-500 mr-1.5 inline-block"></span>
+                                        #partners_payment
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="text-slate-400 block mb-0.5">Expected Target:</span>
+                                    <span class="font-bold text-emerald-400 text-sm" id="sim-backoffice-target">BackOffice V2</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CSV Viewer Container -->
+                        <div class="border border-slate-200 rounded-xl bg-white shadow-sm overflow-hidden">
+                            <div class="bg-slate-100 px-4 py-3 border-b border-slate-200 flex justify-between items-center">
+                                <span class="text-xs font-bold text-slate-600 font-mono" id="sim-file-name">payment_arbitrary_v2.csv</span>
+                                <span class="text-[10px] text-slate-400">Review all columns for errors before continuing</span>
+                            </div>
+                            <div class="overflow-x-auto custom-scrollbar">
+                                <table class="w-full text-left border-collapse text-xs">
+                                    <thead>
+                                        <tr class="bg-slate-50 border-b border-slate-200 text-slate-600 font-bold uppercase">
+                                            <th class="p-3">Partner ID</th>
+                                            <th class="p-3">Amount</th>
+                                            <th class="p-3 font-semibold text-indigo-600" id="col-header-id-v1">Login ID (V1)</th>
+                                            <th class="p-3 font-semibold text-emerald-600" id="col-header-id-v2">Client ID (V2)</th>
+                                            <th class="p-3 font-semibold text-emerald-600" id="col-header-wallet-v2">Wallet ID (V2)</th>
+                                            <th class="p-3">Currency</th>
+                                            <th class="p-3">Remarks</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="sim-csv-tbody" class="divide-y divide-slate-150">
+                                        <!-- Dynamic JS Simulation row mapping -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Simulated Slack Discussion context -->
+                        <div class="bg-slate-50 rounded-xl p-4 border border-slate-200">
+                            <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Simulated Slack Notification Context</h4>
+                            <div class="flex items-start space-x-3 text-xs text-slate-600">
+                                <div class="w-8 h-8 rounded-full bg-orange-500 text-white flex items-center justify-center font-bold">M</div>
+                                <div>
+                                    <span class="font-bold text-slate-900 block">Marketing Coordinator (Operations)</span>
+                                    <p class="mt-1" id="sim-slack-message">"Hey Finance, please check and process the attached payment run sheet. Let me know if any fields look off!"</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Verification checklist and Decision Panel -->
+                    <div class="lg:col-span-4 space-y-6">
+                        <div class="border-2 border-dashed border-slate-200 rounded-xl p-5 bg-slate-50 space-y-4">
+                            <h3 class="text-sm font-bold uppercase tracking-wide text-slate-500">Your Action Desk Checklist</h3>
+                            <p class="text-xs text-slate-400">Carefully click and check off each box *only if* the value is completely present and correct in the file to your left.</p>
+                            
+                            <div class="space-y-2.5" id="sim-active-checklist">
+                                <!-- Dynamic checkboxes to confirm details match actual checklist requirements -->
+                            </div>
+                        </div>
+
+                        <!-- Decision actions -->
+                        <div class="space-y-3 bg-white p-5 border border-slate-200 rounded-xl shadow-sm">
+                            <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wide">Select Operating Execution</h4>
+                            <div class="grid grid-cols-2 gap-3">
+                                <button onclick="triggerDecision('process')" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-2 rounded-xl text-xs shadow transition-colors flex flex-col items-center justify-center space-y-1">
+                                    <span>⚙️ Execute</span>
+                                    <span>Payment</span>
+                                </button>
+                                <button onclick="triggerDecision('reject')" class="w-full bg-rose-600 hover:bg-rose-700 text-white font-bold py-3 px-2 rounded-xl text-xs shadow transition-colors flex flex-col items-center justify-center space-y-1">
+                                    <span>🚫 Reject & Raise</span>
+                                    <span>in Slack</span>
+                                </button>
+                            </div>
+                            <div class="pt-2">
+                                <button onclick="skipScenario()" class="w-full text-slate-500 hover:text-slate-900 font-bold py-2 text-xs transition-colors underline">
+                                    Skip/Next Scenario
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Live simulation feedback box -->
+                        <div id="sim-feedback" class="hidden rounded-xl p-4 text-xs font-medium border">
+                            <!-- Dynamically updated -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ================= TAB 4: KNOWLEDGE CHECK QUIZ ================= -->
+        <div id="content-knowledge-check" class="hidden space-y-8">
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8 max-w-4xl mx-auto">
+                
+                <!-- Initial Welcome Quiz screen -->
+                <div id="quiz-intro" class="text-center py-8 space-y-6">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto text-brand-red text-3xl">
+                        🎓
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900">Partner Operations Certification</h2>
+                        <p class="text-slate-500 mt-2 text-sm max-w-md mx-auto">Complete this 5-question evaluation to certify your knowledge of Deriv Arbitrary Markups & Affiliate Operations.</p>
+                    </div>
+                    <button onclick="startQuiz()" class="px-8 py-3 bg-brand-red text-white font-bold text-sm rounded-xl bg-brand-red-hover transition-colors shadow-md shadow-red-200">
+                        Start Knowledge Check
+                    </button>
+                </div>
+
+                <!-- Active Question Container -->
+                <div id="quiz-active" class="hidden space-y-6">
+                    <!-- Progress meter -->
+                    <div class="flex justify-between items-center text-xs text-slate-400 font-bold uppercase">
+                        <span id="quiz-progress-text">Question 1 of 5</span>
+                        <span id="quiz-score-live">Success Rate Requirement: 100%</span>
+                    </div>
+                    <div class="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                        <div id="quiz-progress-bar" class="h-full bg-brand-red transition-all duration-300" style="width: 20%;"></div>
+                    </div>
+
+                    <!-- Question text -->
+                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-150">
+                        <h3 class="text-base font-bold text-slate-900" id="quiz-question-title">What is Arbitrary Markup paid for?</h3>
+                    </div>
+
+                    <!-- Options list -->
+                    <div class="space-y-3" id="quiz-options-list">
+                        <!-- Dynamic JS options mapping -->
+                    </div>
+
+                    <!-- Navigation Action bottom -->
+                    <div class="flex justify-between items-center pt-4 border-t border-slate-150">
+                        <span class="text-xs text-slate-400" id="quiz-hint-msg">Select the best answer from the options above.</span>
+                        <button onclick="submitAnswer()" id="quiz-btn-action" class="px-6 py-2.5 bg-slate-900 text-white font-bold text-sm rounded-xl hover:bg-slate-800 transition-colors">
+                            Confirm Answer
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Quiz Results & Certificate -->
+                <div id="quiz-results" class="hidden text-center py-8 space-y-6">
+                    <div class="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto text-emerald-600 text-4xl">
+                        🏆
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900">Training Check Completed!</h2>
+                        <p id="quiz-score-final" class="text-lg font-bold text-slate-600 mt-2">Your score: 5 / 5 (100%)</p>
+                        <p id="quiz-result-evaluation" class="text-slate-500 text-sm mt-1">Excellent! You have fully mastered Arbitrary Markups and Affiliate Commission processes.</p>
+                    </div>
+
+                    <!-- Live Certificate Generator Card -->
+                    <div id="quiz-certificate-card" class="max-w-xl mx-auto border-4 border-double border-slate-300 rounded-2xl p-8 bg-slate-50 shadow-inner relative overflow-hidden text-center space-y-6">
+                        <!-- Certificate badge overlay background -->
+                        <div class="absolute -right-16 -bottom-16 w-48 h-48 rounded-full border-4 border-dashed border-red-200/20 opacity-10"></div>
+                        
+                        <div class="flex justify-center">
+                            <span class="text-xs bg-slate-200 text-slate-600 px-3 py-1 rounded-full font-bold uppercase tracking-wider">Operational Credential</span>
+                        </div>
+                        
+                        <div class="space-y-2">
+                            <h3 class="text-xs tracking-widest text-slate-400 uppercase font-bold">Certificate of Completion</h3>
+                            <h2 class="text-xl font-serif font-bold text-slate-900">Partner Operations Specialist</h2>
+                            <p class="text-xs text-slate-500 max-w-sm mx-auto">This credentials verifies that the holder has successfully completed all coursework, interactive workflows, and checklist evaluations for Arbitrary Markup and Affiliate Commissions.</p>
+                        </div>
+
+                        <!-- User Name input inside Certificate for high customization -->
+                        <div class="max-w-xs mx-auto space-y-2">
+                            <label class="block text-[11px] text-slate-400 font-bold uppercase">Enter Colleague/Partner Name for Cert:</label>
+                            <input type="text" id="cert-name-input" oninput="updateCertName()" placeholder="Your Colleague's Name" class="w-full text-center py-2 px-3 bg-white border border-slate-200 rounded-lg text-sm font-bold text-slate-800 uppercase tracking-wide focus:outline-none focus:ring-1 focus:ring-brand-red">
+                        </div>
+
+                        <div class="border-t border-slate-200 pt-4 flex justify-between items-center text-[10px] text-slate-400">
+                            <div>
+                                <p class="font-bold uppercase tracking-wide">Academy Issuer</p>
+                                <p class="font-semibold text-slate-500">Deriv Ops Enablement</p>
+                            </div>
+                            <div>
+                                <p class="font-bold uppercase tracking-wide">Verification Status</p>
+                                <p class="font-semibold text-emerald-500 uppercase tracking-wide flex items-center">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-500 mr-1 inline-block animate-pulse"></span>
+                                    Certified
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-3 justify-center">
+                        <button onclick="resetQuiz()" class="px-6 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-sm rounded-xl transition-colors">
+                            Retake Quiz
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 text-xs py-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+            <div class="flex justify-center items-center space-x-2">
+                <span class="font-bold text-white tracking-wide uppercase">Deriv Partner Training Portal</span>
+                <span class="w-1.5 h-1.5 bg-brand-red rounded-full"></span>
+                <span>Financial & Operations Security Compliance</span>
+            </div>
+            <p class="max-w-2xl mx-auto leading-relaxed text-slate-500">
+                This internal training platform is strictly for employee performance enhancement and compliance auditing orientation. All workflows and simulated models are based on the latest operational requirements.
+            </p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE ENGINE JAVASCRIPT -->
+    <script>
+        // ================= NAVIGATION ENGINE =================
+        function switchTab(tabId) {
+            // Hide all tab screens
+            document.getElementById('content-knowledge-hub').classList.add('hidden');
+            document.getElementById('content-crediting-process').classList.add('hidden');
+            document.getElementById('content-interactive-simulator').classList.add('hidden');
+            document.getElementById('content-knowledge-check').classList.add('hidden');
+
+            // Show active tab screen
+            document.getElementById(`content-${tabId}`).classList.remove('hidden');
+
+            // Reset navigation style
+            const tabs = ['knowledge-hub', 'crediting-process', 'interactive-simulator', 'knowledge-check'];
+            tabs.forEach(t => {
+                const button = document.getElementById(`tab-${t}`);
+                if (button) {
+                    button.className = "flex-1 py-3 px-4 text-center rounded-lg font-semibold text-sm transition-all duration-150 flex items-center justify-center space-x-2 text-slate-600 hover:text-slate-900 hover:bg-slate-50";
+                }
+            });
+
+            // Set active navigation style
+            const activeButton = document.getElementById(`tab-${tabId}`);
+            if (activeButton) {
+                activeButton.className = "flex-1 py-3 px-4 text-center rounded-lg font-semibold text-sm transition-all duration-150 flex items-center justify-center space-x-2 bg-brand-red text-white shadow-md shadow-red-100";
+            }
+
+            // Perform setup if simulator tab opened
+            if (tabId === 'interactive-simulator') {
+                loadSimulationScenario();
+            }
+        }
+
+
+        // ================= SCENARIO DISPLAY ENGINE (TAB 1) =================
+        const earningScenarios = {
+            both: {
+                title: "Partner + App Developer",
+                sub: "Scenario Model A",
+                details: `
+                    <div class="bg-slate-800/80 p-3.5 rounded-lg border border-slate-700">
+                        <p class="font-bold text-emerald-400 flex items-center">
+                            <span class="mr-2">✓</span> Affiliate Commission
+                        </p>
+                        <p class="text-xs text-slate-300 mt-1">Earned on trades placed by referred clients through the app.</p>
+                    </div>
+                    <div class="bg-slate-800/80 p-3.5 rounded-lg border border-slate-700">
+                        <p class="font-bold text-emerald-400 flex items-center">
+                            <span class="mr-2">✓</span> App Markup Commission
+                        </p>
+                        <p class="text-xs text-slate-300 mt-1">Extra markup fee charged on each trade placed through the app (whether affiliated or not).</p>
+                    </div>
+                `,
+                tierbox: `
+                    <div class="w-3.5 h-3.5 bg-emerald-500 rounded-full flex-shrink-0 animate-pulse"></div>
+                    <div>
+                        <p class="text-xs font-bold text-emerald-400">Tiering Determination Eligibility</p>
+                        <p class="text-[11px] text-slate-300">Affiliate commissions count towards the monthly partner tiering determination process.</p>
+                    </div>
+                `
+            },
+            dev: {
+                title: "App Developer Only",
+                sub: "Scenario Model B",
+                details: `
+                    <div class="bg-slate-800/80 p-3.5 rounded-lg border border-slate-700">
+                        <p class="font-bold text-rose-400 flex items-center">
+                            <span class="mr-2">✗</span> Affiliate Commission
+                        </p>
+                        <p class="text-xs text-slate-300 mt-1">No referred client payouts exist because this partner acts purely as a builder, not a referrer.</p>
+                    </div>
+                    <div class="bg-slate-800/80 p-3.5 rounded-lg border border-slate-700">
+                        <p class="font-bold text-emerald-400 flex items-center">
+                            <span class="mr-2">✓</span> App Markup Commission
+                        </p>
+                        <p class="text-xs text-slate-300 mt-1">Collects custom arbitrary markup on every single transaction generated by the application framework.</p>
+                    </div>
+                `,
+                tierbox: `
+                    <div class="w-3.5 h-3.5 bg-rose-500 rounded-full flex-shrink-0"></div>
+                    <div>
+                        <p class="text-xs font-bold text-rose-400">Tiering Determination Exclusion</p>
+                        <p class="text-[11px] text-slate-300">App markup commissions earned strictly as developers <strong>do not</strong> count towards monthly partner tier determination.</p>
+                    </div>
+                `
+            },
+            partner: {
+                title: "Partner Only",
+                sub: "Scenario Model C",
+                details: `
+                    <div class="bg-slate-800/80 p-3.5 rounded-lg border border-slate-700">
+                        <p class="font-bold text-emerald-400 flex items-center">
+                            <span class="mr-2">✓</span> Affiliate Commission
+                        </p>
+                        <p class="text-xs text-slate-300 mt-1">Standard referred payouts from general active trader clients.</p>
+                    </div>
+                    <div class="bg-slate-800/80 p-3.5 rounded-lg border border-slate-700">
+                        <p class="font-bold text-rose-400 flex items-center">
+                            <span class="mr-2">✗</span> App Markup Commission
+                        </p>
+                        <p class="text-xs text-slate-300 mt-1">No app markup collection because the partner has not registered/built a third-party developer API app.</p>
+                    </div>
+                `,
+                tierbox: `
+                    <div class="w-3.5 h-3.5 bg-emerald-500 rounded-full flex-shrink-0 animate-pulse"></div>
+                    <div>
+                        <p class="text-xs font-bold text-emerald-400">Tiering Determination Eligibility</p>
+                        <p class="text-[11px] text-slate-300">Commission counts directly towards tiering determination.</p>
+                    </div>
+                `
+            }
+        };
+
+        function selectScenario(id) {
+            const sc = earningScenarios[id];
+            document.getElementById('scen-title').innerText = sc.title;
+            document.getElementById('scen-sub').innerText = sc.sub;
+            document.getElementById('scen-details').innerHTML = sc.details;
+            
+            const tierBox = document.getElementById('scen-tier-box');
+            tierBox.className = id === 'dev' 
+                ? "flex items-center space-x-3 bg-rose-500/10 border border-rose-500/20 rounded-xl p-3" 
+                : "flex items-center space-x-3 bg-emerald-500/10 border border-emerald-500/20 rounded-xl p-3";
+            tierBox.innerHTML = sc.tierbox;
+
+            // highlight active button
+            ['both', 'dev', 'partner'].forEach(btn => {
+                const el = document.getElementById(`btn-scen-${btn}`);
+                if (btn === id) {
+                    el.className = "p-4 rounded-xl border-2 border-brand-red text-left bg-rose-50/50 hover:bg-rose-50 transition-all";
+                } else {
+                    el.className = "p-4 rounded-xl border border-slate-200 text-left bg-white hover:bg-slate-50 transition-all";
+                }
+            });
+        }
+
+
+        // ================= INCENTIVES CALCULATOR (TAB 1) =================
+        function calculateIncentives() {
+            const val = parseFloat(document.getElementById('commission-slider').value);
+            document.getElementById('val-com-selected').innerText = `$${val.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+
+            let tierName = "Bronze Tier";
+            let rewardRateText = "Base commission only";
+            let extraBonus = 0;
+            let bonusStatus = "Not Eligible";
+            let badgeClass = "bg-amber-100 text-amber-800 border border-amber-200";
+
+            if (val >= 0 && val < 500) {
+                tierName = "Bronze Tier";
+                rewardRateText = "No Extra Reward Payout";
+                extraBonus = 0;
+                badgeClass = "bg-amber-100 text-amber-800 border border-amber-200";
+            } else if (val >= 500 && val < 1000) {
+                tierName = "Silver Tier";
+                rewardRateText = "+4% Extra Reward";
+                extraBonus = val * 0.04;
+                badgeClass = "bg-slate-300 text-slate-800 border border-slate-400";
+            } else if (val >= 1000 && val < 5000) {
+                tierName = "Gold Tier";
+                rewardRateText = "+6% Extra Reward";
+                extraBonus = val * 0.06;
+                badgeClass = "bg-amber-400 text-amber-950 border border-amber-500";
+            } else if (val >= 5000) {
+                tierName = "Platinum Tier";
+                rewardRateText = "+8% Extra Reward";
+                extraBonus = val * 0.08;
+                bonusStatus = "Eligible ($500.00 Extra/Quarter)";
+                badgeClass = "bg-indigo-600 text-white border border-indigo-700";
+            }
+
+            const badge = document.getElementById('badge-tier');
+            badge.innerText = tierName;
+            badge.className = `text-xs px-3 py-1 rounded font-bold uppercase tracking-wider ${badgeClass}`;
+
+            document.getElementById('stat-reward-rate').innerText = rewardRateText;
+            document.getElementById('stat-calc-payout').innerText = `$${extraBonus.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} Extra`;
+            
+            const bonusEl = document.getElementById('stat-bonus-status');
+            bonusEl.innerText = bonusStatus;
+            if (bonusStatus.includes("Eligible")) {
+                bonusEl.className = "font-bold text-emerald-400 text-right";
+            } else {
+                bonusEl.className = "font-bold text-slate-500 text-right text-xs";
+            }
+        }
+
+
+        // ================= FLOW STEPS & CHECKLIST CONTROLLER (TAB 2) =================
+        let activeFlowType = "arbitrary"; // default is arbitrary
+
+        const flowSteps = {
+            arbitrary: [
+                {
+                    title: "Compliance List Approval",
+                    actor: "Compliance Team",
+                    desc: "The Compliance Team reviews regulatory checks and partner standing. They generate and verify the official list of eligible partners who are 'OK to Pay' and submit this cleared dataset to the Marketing Team.",
+                    deliverable: "📋 Verified 'OK to Pay' partner sheet sent via secure channel."
+                },
+                {
+                    title: "Eligible Verification Process",
+                    actor: "Marketing Team",
+                    desc: "The Marketing Team correlates the Compliance roster against operational campaigns and validates both the partner IDs and the precise commission amounts designated for pay out.",
+                    deliverable: "🛠️ Approved commission master sheet validated for disbursement."
+                },
+                {
+                    title: "Process Crediting Request Submission",
+                    actor: "Marketing Team",
+                    desc: "Marketing sends the formalized request directly to the Finance Team through the <strong>#partners_payment</strong> Slack channel. This payload must reference explicit details, accompanied by the email containing structural support documents (working file & payment CSV).",
+                    deliverable: "📨 Submission matching standards with payment files attached."
+                },
+                {
+                    title: "Finance Crosscheck Audit",
+                    actor: "Finance Team",
+                    desc: "Finance reviews the incoming ticket. They cross-verify the records in the support working file with the values listed inside the payload payment CSV, checking formats and key properties.",
+                    deliverable: "🔍 Complete match verification of structural working file against CSV details."
+                },
+                {
+                    title: "Payment Crediting Execution",
+                    actor: "Finance Team",
+                    desc: "If perfectly verified, Finance logs into BackOffice V1 or BackOffice V2 (based on request classification: V1 for DSVG, V2 for DCI) and disburses the rewards. If discrepancies crop up, Finance holds the request and flags it in #partners_payment.",
+                    deliverable: "💳 Successful BackOffice payload processing or holds raised in Slack."
+                }
+            ],
+            affiliate: [
+                {
+                    title: "Campaign Performance Calculation",
+                    actor: "Marketing Team",
+                    desc: "The Marketing Team evaluates the performance metrics of active affiliates, identifying earnings derived from MyAffiliate (DSVG), Dynamic Work (DW), or Retrospective actions.",
+                    deliverable: "📋 Calculation sheets containing MyAffiliate or retrospective values."
+                },
+                {
+                    title: "Marketing Submission Verification",
+                    actor: "Marketing Team",
+                    desc: "The Marketing Team validates the final ledger and uploads the verified files directly. They notify Finance in the dedicated <strong>#partners_payment</strong> Slack channel.",
+                    deliverable: "📨 Formatted Slack ticket alerting Finance of pending manual uploads."
+                },
+                {
+                    title: "Finance Operational Verification",
+                    actor: "Finance Team",
+                    desc: "Finance logs the request and cross-audits the records within the working sheet with the payment CSV to guarantee perfect schema consistency.",
+                    deliverable: "🔍 Double audit checking values: Amount, Currency, and Login ID."
+                },
+                {
+                    title: "BackOffice V1 Execution",
+                    actor: "Finance Team",
+                    desc: "For approved manual structures (DSVG, DW, Retrospective), Finance manual runs the credit program directly within <strong>BackOffice V1</strong>. The payout is executed immediately.",
+                    deliverable: "💳 Real-time disbursement tracking within BackOffice V1."
+                },
+                {
+                    title: "Automated Commission Service",
+                    actor: "BackOffice System",
+                    desc: "<strong>Note:</strong> Affiliate V2, Partner Tier Reward, and Partner Quarterly Bonuses bypass manual channels entirely! These are autonomously processed on cycle days by the automated BackOffice system.",
+                    deliverable: "🤖 Zero-touch automated distribution by the background processor service."
+                }
+            ]
+        };
+
+        const standardChecklists = {
+            arbitrary: [
+                "Amount Check: Verify exact matching amount is present and positive.",
+                "Login ID (V1) (For V1 DSVG Markup requests only): Check against schema.",
+                "Client ID (V2) (For V2 DCI Markup requests only): Must align to profile details.",
+                "Wallet ID (V2) (For V2 DCI Markup requests only): Must match currency wallet.",
+                "Currency Code: Verify currency represents official partner profile code.",
+                "Remarks/Payment Description: Format matches template rules."
+            ],
+            affiliate: [
+                "Amount Check: Confirm exact payment amount matching.",
+                "Login ID (V1): Ensure valid registered BackOffice login ID.",
+                "Currency Code: Ensure payment matches selected trade wallet parameter.",
+                "Remarks/Description: Validate that context reference tags are complete."
+            ]
+        };
+
+        function toggleFlow(type) {
+            activeFlowType = type;
+            
+            const btnArb = document.getElementById('btn-flow-arbitrary');
+            const btnAff = document.getElementById('btn-flow-affiliate');
+            
+            if (type === 'arbitrary') {
+                btnArb.className = "px-4 py-2 text-xs font-bold rounded-lg border border-brand-red bg-brand-red text-white transition-all";
+                btnAff.className = "px-4 py-2 text-xs font-bold rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 transition-all";
+                document.getElementById('type-map-arbitrary').classList.remove('hidden');
+                document.getElementById('type-map-affiliate').classList.add('hidden');
+                document.getElementById('checklist-type-indicator').innerText = "Arbitrary Markup Fields";
+            } else {
+                btnAff.className = "px-4 py-2 text-xs font-bold rounded-lg border border-brand-red bg-brand-red text-white transition-all";
+                btnArb.className = "px-4 py-2 text-xs font-bold rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 transition-all";
+                document.getElementById('type-map-affiliate').classList.remove('hidden');
+                document.getElementById('type-map-arbitrary').classList.add('hidden');
+                document.getElementById('checklist-type-indicator').innerText = "Affiliate Fields Checklist";
+            }
+
+            selectStep(1); // reset step progress selection
+            renderInteractiveChecklist();
+        }
+
+        function selectStep(stepNum) {
+            const index = stepNum - 1;
+            const currentSteps = flowSteps[activeFlowType];
+            const currentStep = currentSteps[index];
+
+            // Update DOM Details
+            document.getElementById('active-step-lbl').innerText = `STEP ${stepNum} OF 5`;
+            document.getElementById('active-step-title').innerText = currentStep.title;
+            document.getElementById('active-step-actor').innerText = currentStep.actor;
+            document.getElementById('active-step-desc').innerHTML = currentStep.desc;
+            document.getElementById('active-step-deliverable').innerHTML = `⚙️ ${currentStep.deliverable}`;
+
+            // Handle badge look based on actor type
+            const actorBadge = document.getElementById('active-step-actor');
+            if (currentStep.actor.includes("Finance")) {
+                actorBadge.className = "mt-2 md:mt-0 px-3 py-1 rounded-full text-xs font-bold bg-green-100 text-green-800 border border-green-200";
+            } else if (currentStep.actor.includes("Marketing")) {
+                actorBadge.className = "mt-2 md:mt-0 px-3 py-1 rounded-full text-xs font-bold bg-rose-100 text-rose-800 border border-rose-200";
+            } else if (currentStep.actor.includes("Compliance")) {
+                actorBadge.className = "mt-2 md:mt-0 px-3 py-1 rounded-full text-xs font-bold bg-yellow-100 text-yellow-800 border border-yellow-200";
+            } else {
+                actorBadge.className = "mt-2 md:mt-0 px-3 py-1 rounded-full text-xs font-bold bg-indigo-100 text-indigo-800 border border-indigo-200";
+            }
+
+            // Adjust visual timeline bar width
+            const progressBar = document.getElementById('interactive-progress');
+            progressBar.style.width = `${index * 25}%`;
+
+            // Adjust timeline nodes looks
+            for (let i = 1; i <= 5; i++) {
+                const node = document.getElementById(`step-node-${i}`);
+                if (i <= stepNum) {
+                    node.className = "w-10 h-10 rounded-full bg-brand-red text-white flex items-center justify-center font-bold text-sm shadow-md transition-all";
+                } else {
+                    node.className = "w-10 h-10 rounded-full bg-slate-200 text-slate-600 flex items-center justify-center font-bold text-sm transition-all";
+                }
+            }
+        }
+
+        function renderInteractiveChecklist() {
+            const list = standardChecklists[activeFlowType];
+            const parent = document.getElementById('checklist-render');
+            parent.innerHTML = '';
+
+            list.forEach((item, index) => {
+                const wrapper = document.createElement('label');
+                wrapper.className = "flex items-start space-x-3 p-3 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors cursor-pointer text-xs border border-slate-200";
+                
+                const checkbox = document.createElement('input');
+                checkbox.type = "checkbox";
+                checkbox.className = "mt-0.5 rounded text-brand-red focus-brand-red accent-[#ff444f] w-4 h-4";
+                
+                const span = document.createElement('span');
+                span.className = "text-slate-600 font-medium";
+                span.innerText = item;
+
+                wrapper.appendChild(checkbox);
+                wrapper.appendChild(span);
+                parent.appendChild(wrapper);
+            });
+        }
+
+
+        // ================= SIMULATOR MODULE ENGINE (TAB 3) =================
+        const simulatorScenarios = [
+            {
+                ticketId: "#TKT-2026-0089",
+                type: "Arbitrary Markup V2 (DCI)",
+                target: "BackOffice V2",
+                csvName: "arb_v2_disbursement_march.csv",
+                message: "Marketing: Hello team, please credit this sheet for our V2 api developers. Ensure you confirm both Client ID and Wallet ID!",
+                requiredChecks: ["amount", "client_id", "wallet_id", "currency", "remarks"],
+                payoutDetails: [
+                    { partner: "P0089", amount: "1,250.00", loginId: "—", clientId: "CR988310", wallet: "W100938", currency: "USD", remarks: "MARCH 2026 ARB MARKUP V2" },
+                    { partner: "P0112", amount: "890.00", loginId: "—", clientId: "CR445120", wallet: "W200877", currency: "EUR", remarks: "MARCH 2026 ARB MARKUP V2" }
+                ],
+                isBuggy: false,
+                bugReason: ""
+            },
+            {
+                ticketId: "#TKT-2026-0091",
+                type: "Arbitrary Markup V2 (DCI)",
+                target: "BackOffice V2",
+                csvName: "arb_v2_aprilsheet.csv",
+                message: "Marketing: Sending over our Arbitrary Markup list for April.",
+                requiredChecks: ["amount", "client_id", "wallet_id", "currency", "remarks"],
+                payoutDetails: [
+                    { partner: "P0089", amount: "5,100.00", loginId: "—", clientId: "CR988310", wallet: "MISSING", currency: "USD", remarks: "APR 2026 ARB MARKUP V2" },
+                    { partner: "P0112", amount: "410.00", loginId: "—", clientId: "CR445120", wallet: "W200877", currency: "EUR", remarks: "APR 2026 ARB MARKUP V2" }
+                ],
+                isBuggy: true,
+                bugReason: "Wallet ID is missing in the first record. Since this is an Arbitrary V2 (DCI) record, Wallet ID is a mandatory property!"
+            },
+            {
+                ticketId: "#TKT-2026-0104",
+                type: "Affiliate – MyAffiliate (DSVG)",
+                target: "BackOffice V1",
+                csvName: "myaffiliate_dsvg_payout.csv",
+                message: "Marketing: Here's the monthly MyAffiliate DSVG run. Target destination is manual crediting through BO V1.",
+                requiredChecks: ["amount", "login_id", "currency", "remarks"],
+                payoutDetails: [
+                    { partner: "P0223", amount: "750.00", loginId: "LG449301", clientId: "—", wallet: "—", currency: "USD", remarks: "MYAFFILIATE DSVG - APR 2026" },
+                    { partner: "P0255", amount: "1,120.00", loginId: "LG553029", clientId: "—", wallet: "—", currency: "USD", remarks: "MYAFFILIATE DSVG - APR 2026" }
+                ],
+                isBuggy: false,
+                bugReason: ""
+            },
+            {
+                ticketId: "#TKT-2026-0105",
+                type: "Affiliate Commission V2",
+                target: "Automated Service",
+                csvName: "aff_v2_system.csv",
+                message: "Marketing: Hey, we need to manually credit these Affiliate V2 values please.",
+                requiredChecks: ["amount", "currency"],
+                payoutDetails: [
+                    { partner: "P0411", amount: "350.00", loginId: "—", clientId: "CR882103", wallet: "—", currency: "USD", remarks: "AFFILIATE V2 COMMISSION" }
+                ],
+                isBuggy: true,
+                bugReason: "This is an Affiliate Commission V2 plan! Per our operations policy, Affiliate V2, Partner Tier Rewards, and Partner Quarterly Bonuses are credited automatically by the BackOffice Commission Service and do not require manual intervention. You should reject this and instruct Marketing that it runs automatically!"
+            }
+        ];
+
+        let currentSimIndex = 0;
+
+        function loadSimulationScenario() {
+            const sc = simulatorScenarios[currentSimIndex];
+
+            // Update textual elements
+            document.getElementById('sim-ticket-id').innerText = sc.ticketId;
+            document.getElementById('sim-request-type').innerText = sc.type;
+            document.getElementById('sim-backoffice-target').innerText = sc.target;
+            document.getElementById('sim-file-name').innerText = sc.csvName;
+            document.getElementById('sim-slack-message').innerText = `"${sc.message}"`;
+
+            // Reset Ticket status display
+            const statusEl = document.getElementById('sim-ticket-status');
+            statusEl.innerText = "Pending Review";
+            statusEl.className = "bg-yellow-500/10 border border-yellow-500/20 text-yellow-500 text-xs px-2.5 py-1 rounded font-bold";
+
+            // Hide Feedback box
+            const feedbackBox = document.getElementById('sim-feedback');
+            feedbackBox.className = "hidden";
+
+            // Load Payout details inside the table
+            const tbody = document.getElementById('sim-csv-tbody');
+            tbody.innerHTML = '';
+            sc.payoutDetails.forEach(row => {
+                const tr = document.createElement('tr');
+                tr.className = "hover:bg-slate-50";
+                
+                // Highlight red if it holds structural gaps
+                let walletStyle = "";
+                if (row.wallet === 'MISSING') {
+                    walletStyle = "bg-rose-100 text-rose-700 font-bold px-2 py-0.5 rounded";
+                }
+
+                tr.innerHTML = `
+                    <td class="p-3 font-semibold text-slate-900">${row.partner}</td>
+                    <td class="p-3 font-bold">${row.amount}</td>
+                    <td class="p-3 text-slate-500">${row.loginId}</td>
+                    <td class="p-3 text-slate-500 font-mono">${row.clientId}</td>
+                    <td class="p-3 text-slate-500 font-mono"><span class="${walletStyle}">${row.wallet}</span></td>
+                    <td class="p-3"><span class="bg-slate-100 text-slate-700 font-bold px-2 py-0.5 rounded">${row.currency}</span></td>
+                    <td class="p-3 text-slate-500 max-w-[150px] truncate">${row.remarks}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+            // Adjust table header styling according to requirements
+            const isV2 = sc.type.includes("V2") || sc.type.includes("DCI");
+            if (isV2) {
+                document.getElementById('col-header-id-v1').className = "p-3 font-semibold text-slate-300 line-through";
+                document.getElementById('col-header-id-v2').className = "p-3 font-semibold text-emerald-600";
+                document.getElementById('col-header-wallet-v2').className = "p-3 font-semibold text-emerald-600";
+            } else {
+                document.getElementById('col-header-id-v1').className = "p-3 font-semibold text-indigo-600";
+                document.getElementById('col-header-id-v2').className = "p-3 font-semibold text-slate-300 line-through";
+                document.getElementById('col-header-wallet-v2').className = "p-3 font-semibold text-slate-300 line-through";
+            }
+
+            // Build task checklists
+            buildSimChecklist(sc.type);
+        }
+
+        function buildSimChecklist(type) {
+            const checklistContainer = document.getElementById('sim-active-checklist');
+            checklistContainer.innerHTML = '';
+
+            const items = type.includes("V2") || type.includes("DCI")
+                ? [
+                    { id: "amt", text: "Verify Amounts match & positive" },
+                    { id: "cid", text: "Client ID (V2) present & valid format" },
+                    { id: "wid", text: "Wallet ID (V2) present & valid currency type" },
+                    { id: "cur", text: "Verify currencies matches profile setting" },
+                    { id: "rem", text: "Ensure remarks match system format" }
+                  ]
+                : [
+                    { id: "amt", text: "Verify Payout Amounts" },
+                    { id: "lid", text: "Login ID (V1) present and valid structure" },
+                    { id: "cur", text: "Validate correct target Currency wallet code" },
+                    { id: "rem", text: "Remarks/Description are fully filled" }
+                  ];
+
+            items.forEach(item => {
+                const label = document.createElement('label');
+                label.className = "flex items-start space-x-2.5 p-2 bg-white rounded-lg hover:bg-slate-100/50 cursor-pointer text-xs border border-slate-200 shadow-sm";
+                label.innerHTML = `
+                    <input type="checkbox" id="chk-sim-${item.id}" class="mt-0.5 rounded text-brand-red focus-brand-red accent-[#ff444f] w-3.5 h-3.5">
+                    <span class="text-slate-600 font-semibold">${item.text}</span>
+                `;
+                checklistContainer.appendChild(label);
+            });
+        }
+
+        function triggerDecision(action) {
+            const sc = simulatorScenarios[currentSimIndex];
+            const feedbackBox = document.getElementById('sim-feedback');
+            const statusEl = document.getElementById('sim-ticket-status');
+
+            // Audit checklist compliance: User must check off all items to simulate due diligence
+            const checkboxes = document.querySelectorAll('[id^="chk-sim-"]');
+            let allChecked = true;
+            checkboxes.forEach(chk => {
+                if (!chk.checked) allChecked = false;
+            });
+
+            if (!allChecked) {
+                feedbackBox.className = "rounded-xl p-4 text-xs font-medium border bg-amber-50 text-amber-800 border-amber-200 mt-4 block";
+                feedbackBox.innerHTML = `⚠️ <strong>Incomplete Verification Audit!</strong> You must complete your checklist review of the file's variables before approving or rejecting the payout.`;
+                return;
+            }
+
+            // Verify if decision matches scenario logic
+            if (action === 'process') {
+                if (sc.isBuggy) {
+                    // Wrong choice
+                    statusEl.innerText = "Error Flagged";
+                    statusEl.className = "bg-rose-500/10 border border-rose-500/20 text-rose-500 text-xs px-2.5 py-1 rounded font-bold";
+
+                    feedbackBox.className = "rounded-xl p-4 text-xs font-medium border bg-rose-50 text-rose-800 border-rose-200 mt-4 block shadow-sm";
+                    feedbackBox.innerHTML = `❌ <strong>Operation Failure!</strong> You processed a buggy file. <br class="mb-1"><span class="font-normal text-slate-600">${sc.bugReason}</span>`;
+                } else {
+                    // Correct Choice
+                    statusEl.innerText = "Paid Success";
+                    statusEl.className = "bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-xs px-2.5 py-1 rounded font-bold";
+
+                    feedbackBox.className = "rounded-xl p-4 text-xs font-medium border bg-emerald-50 text-emerald-800 border-emerald-200 mt-4 block shadow-sm";
+                    feedbackBox.innerHTML = `🎉 <strong>Success!</strong> Commission crediting successfully finalized to ${sc.target} database records. No discrepancies logged. Great work!`;
+                }
+            } else if (action === 'reject') {
+                if (sc.isBuggy) {
+                    // Correct Choice
+                    statusEl.innerText = "Audit Rejected";
+                    statusEl.className = "bg-orange-500/10 border border-orange-500/20 text-orange-500 text-xs px-2.5 py-1 rounded font-bold";
+
+                    feedbackBox.className = "rounded-xl p-4 text-xs font-medium border bg-emerald-50 text-emerald-800 border-emerald-200 mt-4 block shadow-sm";
+                    feedbackBox.innerHTML = `🎉 <strong>Outstanding Catch!</strong> You successfully rejected this payload. <br class="mb-1"><span class="font-normal text-slate-600"><strong>Audit Reason:</strong> ${sc.bugReason}</span>`;
+                } else {
+                    // Wrong choice
+                    statusEl.innerText = "Unjustified Reject";
+                    statusEl.className = "bg-rose-500/10 border border-rose-500/20 text-rose-500 text-xs px-2.5 py-1 rounded font-bold";
+
+                    feedbackBox.className = "rounded-xl p-4 text-xs font-medium border bg-rose-50 text-rose-800 border-rose-200 mt-4 block shadow-sm";
+                    feedbackBox.innerHTML = `❌ <strong>Operational Delays!</strong> You rejected a perfectly valid dataset list. This stops partner payments and causes unneeded team friction. Please re-audit.`;
+                }
+            }
+        }
+
+        function skipScenario() {
+            currentSimIndex = (currentSimIndex + 1) % simulatorScenarios.length;
+            loadSimulationScenario();
+        }
+
+
+        // ================= KNOWLEDGE CHECK QUIZ ENGINE (TAB 4) =================
+        const quizQuestions = [
+            {
+                question: "Where is Arbitrary Markup V2 (DCI) commission credited?",
+                options: [
+                    { text: "Through manual processing on BackOffice V1", isCorrect: false },
+                    { text: "Through manual processing on BackOffice V2", isCorrect: true },
+                    { text: "It is automatically processed by the background Commission Service", isCorrect: false },
+                    { text: "It is directly credited to client's personal bank card system", isCorrect: false }
+                ],
+                explanation: "Arbitrary Markup V2 (DCI) must be manually evaluated and processed inside the BackOffice V2 environment."
+            },
+            {
+                question: "Which of the following commission structures are processed completely AUTOMATICALLY?",
+                options: [
+                    { text: "MyAffiliate (DSVG), Dynamic Work (DW), and Retrospective payments", isCorrect: false },
+                    { text: "Arbitrary Markup V1 and Arbitrary Markup V2", isCorrect: false },
+                    { text: "Affiliate Commission V2, Partner Tier Rewards, and Partner Quarterly Bonuses", isCorrect: true },
+                    { text: "All partner rewards require manual checklist execution by Finance Team", isCorrect: false }
+                ],
+                explanation: "Affiliate Commission V2, Partner Tier Rewards, and Partner Quarterly Bonuses are automatically resolved and sent via the automated BackOffice Commission Service."
+            },
+            {
+                question: "What action must Finance execute if discrepancy or file format error is found during auditing?",
+                options: [
+                    { text: "Correct the fields in BackOffice yourself based on best assumptions", isCorrect: false },
+                    { text: "Disburse anyway and add internal auditing flags for next cycle run", isCorrect: false },
+                    { text: "Immediately hold processing and raise issues directly in #partners_payment Slack", isCorrect: true },
+                    { text: "Delete the error records entirely and proceed with partial batch", isCorrect: false }
+                ],
+                explanation: "Finance should never assume parameters. Discrepancies must be raised in the `#partners_payment` slack space."
+            },
+            {
+                question: "Does 'App Developer Only' arbitrary markup earnings count towards the partner's monthly performance tiering assessment?",
+                options: [
+                    { text: "Yes, all income streams generated through API applications count equally", isCorrect: false },
+                    { text: "No, markup commissions earned strictly as application developers do not count towards tier rankings", isCorrect: true },
+                    { text: "Only if the application performs over 5,000 trades per active calendar month", isCorrect: false }
+                ],
+                explanation: "Earning Scenarios outline that 'App Developer Only' markup income doesn't impact tiering. Tier rewards depend on standard referred client affiliate commissions."
+            },
+            {
+                question: "Which parameters must the payment CSV files specifically support for Arbitrary V2 (DCI)?",
+                options: [
+                    { text: "Amount, Login ID (V1), Currency, and Remarks", isCorrect: false },
+                    { text: "Amount, Client ID (V2), Wallet ID (V2), Currency, and Remarks", isCorrect: true },
+                    { text: "Amount, Trading Contract Volume, EU Country parameter, and Bank IBAN", isCorrect: false }
+                ],
+                explanation: "Arbitrary V2 (DCI) payment CSV schema mandates: Amount, Client ID (V2), Wallet ID (V2), Currency, and Remarks."
+            }
+        ];
+
+        let quizIndex = 0;
+        let quizScore = 0;
+        let selectedOptionIndex = null;
+
+        function startQuiz() {
+            quizIndex = 0;
+            quizScore = 0;
+            selectedOptionIndex = null;
+            
+            document.getElementById('quiz-intro').classList.add('hidden');
+            document.getElementById('quiz-active').classList.remove('hidden');
+            document.getElementById('quiz-results').classList.add('hidden');
+            
+            loadQuizQuestion();
+        }
+
+        function loadQuizQuestion() {
+            const q = quizQuestions[quizIndex];
+            selectedOptionIndex = null;
+
+            // Header indicators
+            document.getElementById('quiz-progress-text').innerText = `Question ${quizIndex + 1} of ${quizQuestions.length}`;
+            const progressPct = ((quizIndex + 1) / quizQuestions.length) * 100;
+            document.getElementById('quiz-progress-bar').style.width = `${progressPct}%`;
+
+            // Reset action button text
+            document.getElementById('quiz-btn-action').innerText = "Submit Answer";
+            document.getElementById('quiz-hint-msg').innerText = "Select an option from the list above.";
+
+            // Question title
+            document.getElementById('quiz-question-title').innerText = q.question;
+
+            // Map options
+            const optionsContainer = document.getElementById('quiz-options-list');
+            optionsContainer.innerHTML = '';
+            
+            q.options.forEach((opt, idx) => {
+                const button = document.createElement('button');
+                button.onclick = () => selectQuizOption(idx);
+                button.id = `quiz-opt-btn-${idx}`;
+                button.className = "w-full text-left p-4 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 transition-all text-xs font-semibold text-slate-800 flex justify-between items-center";
+                button.innerHTML = `
+                    <span>${opt.text}</span>
+                    <span class="w-5 h-5 rounded-full border border-slate-300 flex items-center justify-center text-slate-400 font-mono text-[10px]"></span>
+                `;
+                optionsContainer.appendChild(button);
+            });
+        }
+
+        function selectQuizOption(index) {
+            const q = quizQuestions[quizIndex];
+            selectedOptionIndex = index;
+
+            // Highlight chosen button
+            q.options.forEach((opt, idx) => {
+                const btn = document.getElementById(`quiz-opt-btn-${idx}`);
+                if (idx === index) {
+                    btn.className = "w-full text-left p-4 rounded-xl border-2 border-brand-red bg-rose-50/30 transition-all text-xs font-semibold text-slate-900 flex justify-between items-center shadow-sm";
+                    btn.querySelector('span:last-child').className = "w-5 h-5 rounded-full bg-brand-red text-white flex items-center justify-center font-bold text-xs";
+                    btn.querySelector('span:last-child').innerText = "✓";
+                } else {
+                    btn.className = "w-full text-left p-4 rounded-xl border border-slate-200 bg-white transition-all text-xs font-semibold text-slate-800 flex justify-between items-center";
+                    btn.querySelector('span:last-child').className = "w-5 h-5 rounded-full border border-slate-300 flex items-center justify-center text-slate-400 font-mono text-[10px]";
+                    btn.querySelector('span:last-child').innerText = "";
+                }
+            });
+        }
+
+        function submitAnswer() {
+            if (selectedOptionIndex === null) {
+                document.getElementById('quiz-hint-msg').className = "text-xs text-rose-500 font-bold";
+                document.getElementById('quiz-hint-msg').innerText = "⚠️ Please select an answer before continuing!";
+                return;
+            }
+
+            const q = quizQuestions[quizIndex];
+            const chosen = q.options[selectedOptionIndex];
+
+            // Render feedback styles on option lists immediately
+            q.options.forEach((opt, idx) => {
+                const btn = document.getElementById(`quiz-opt-btn-${idx}`);
+                btn.disabled = true; // prevent multi clicks
+                if (opt.isCorrect) {
+                    btn.className = "w-full text-left p-4 rounded-xl border-2 border-emerald-500 bg-emerald-50/50 transition-all text-xs font-semibold text-slate-900 flex justify-between items-center";
+                    btn.querySelector('span:last-child').className = "w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-xs";
+                    btn.querySelector('span:last-child').innerText = "✓";
+                } else if (idx === selectedOptionIndex) {
+                    btn.className = "w-full text-left p-4 rounded-xl border-2 border-rose-500 bg-rose-50/50 transition-all text-xs font-semibold text-slate-900 flex justify-between items-center";
+                    btn.querySelector('span:last-child').className = "w-5 h-5 rounded-full bg-rose-500 text-white flex items-center justify-center font-bold text-xs";
+                    btn.querySelector('span:last-child').innerText = "✗";
+                }
+            });
+
+            if (chosen.isCorrect) {
+                quizScore++;
+                document.getElementById('quiz-hint-msg').className = "text-xs text-emerald-600 font-bold";
+                document.getElementById('quiz-hint-msg').innerText = `🎉 Correct! ${q.explanation}`;
+            } else {
+                document.getElementById('quiz-hint-msg').className = "text-xs text-rose-600 font-bold";
+                document.getElementById('quiz-hint-msg').innerText = `❌ Incorrect. ${q.explanation}`;
+            }
+
+            // Adjust button for next operations
+            const nextBtn = document.getElementById('quiz-btn-action');
+            nextBtn.innerText = quizIndex < quizQuestions.length - 1 ? "Next Question" : "View Results";
+            nextBtn.onclick = progressQuiz;
+        }
+
+        function progressQuiz() {
+            // Restore click action mapping
+            const actionBtn = document.getElementById('quiz-btn-action');
+            actionBtn.onclick = submitAnswer;
+
+            if (quizIndex < quizQuestions.length - 1) {
+                quizIndex++;
+                loadQuizQuestion();
+            } else {
+                showQuizResults();
+            }
+        }
+
+        function showQuizResults() {
+            document.getElementById('quiz-active').classList.add('hidden');
+            document.getElementById('quiz-results').classList.remove('hidden');
+
+            document.getElementById('quiz-score-final').innerText = `Your score: ${quizScore} / ${quizQuestions.length} (${(quizScore/quizQuestions.length)*100}%)`;
+
+            const evaluationText = document.getElementById('quiz-result-evaluation');
+            const certBox = document.getElementById('quiz-certificate-card');
+
+            if (quizScore === quizQuestions.length) {
+                evaluationText.className = "text-emerald-600 text-sm font-bold mt-2";
+                evaluationText.innerText = "🏆 Perfect Score! You have unlocked your Partner Operations Certification below.";
+                certBox.classList.remove('hidden');
+                // Pre-fill placeholder
+                document.getElementById('cert-name-input').value = "Operations Officer";
+            } else {
+                evaluationText.className = "text-rose-600 text-sm font-medium mt-2";
+                evaluationText.innerText = "⚠️ Pass mark is 100%. Please review the Knowledge Hub tabs and try again to unlock your certificate!";
+                certBox.classList.add('hidden');
+            }
+        }
+
+        function updateCertName() {
+            // Keep value tracked in case they type
+        }
+
+        function resetQuiz() {
+            document.getElementById('quiz-intro').classList.remove('hidden');
+            document.getElementById('quiz-results').classList.add('hidden');
+            document.getElementById('quiz-active').classList.add('hidden');
+        }
+
+
+        // ================= INITIALIZATION =================
+        window.onload = function() {
+            // Default setup values
+            selectScenario('both');
+            calculateIncentives();
+            selectStep(1);
+            renderInteractiveChecklist();
+        }
+    </script>
+</body>
+</html>
