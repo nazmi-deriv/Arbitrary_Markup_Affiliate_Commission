@@ -29,7 +29,7 @@
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -93,8 +93,8 @@
 
             <!-- Sidebar Footer -->
             <div class="p-4 bg-slate-900 border-t border-slate-700 text-center text-xs text-slate-400 flex flex-col gap-1">
-                <span>Handover Training Toolkit v2.5</span>
-                <span class="text-[10px] opacity-70">Derived from Operations & Marketing SOPs</span>
+                <span>Handover Training Toolkit v3.0</span>
+                <span class="text-[10px] opacity-70">SOP Verified & Payments Aligned</span>
             </div>
         </aside>
 
@@ -148,7 +148,7 @@
 
     <!-- MAIN APP ENGINE STATE & SLIDES GENERATOR -->
     <script>
-        // Database of all 20 Slides
+        // Database of all 21 Slides
         const slides = [
             {
                 title: "Welcome & Handover Hub",
@@ -163,7 +163,7 @@
                                 <p class="text-slate-500 mt-1">A step-by-step interactive handbook for mastering Partner Operations.</p>
                             </div>
                             <div class="bg-derivRed/10 text-derivRed rounded-xl px-4 py-3 border border-derivRed/20 flex items-center gap-3">
-                                <span class="text-3xl font-bold">20</span>
+                                <span class="text-3xl font-bold">21</span>
                                 <div class="text-xs leading-tight font-medium">
                                     Interactive<br/>Training Slides
                                 </div>
@@ -193,7 +193,7 @@
                                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                 </div>
                                 <h3 class="font-bold text-slate-800 text-base">3. Verification & Crediting</h3>
-                                <p class="text-xs text-slate-500 mt-2 leading-relaxed">The step-by-step checklist to avoid multi-million errors. Map the BackOffice tools, Slack updates, and the verification naming templates.</p>
+                                <p class="text-xs text-slate-500 mt-2 leading-relaxed">The step-by-step checklist to avoid errors. Map the BackOffice tools, Slack updates, and the 13-Step Verification process.</p>
                             </div>
                         </div>
 
@@ -402,69 +402,6 @@
                 `
             },
             {
-                title: "Crediting Process Flowchart",
-                subtitle: "Step-by-Step Approval Walkthrough",
-                category: "Arbitrary Markup",
-                render: () => `
-                    <div class="space-y-6">
-                        <div class="border-b border-gray-100 pb-4">
-                            <h2 class="text-2xl font-bold text-slate-800">Arbitrary Markup Crediting Pipeline</h2>
-                            <p class="text-slate-500 text-sm">The full loop from Compliance sign-off to final payment verification:</p>
-                        </div>
-
-                        <!-- Mindmap Flowchart Integration -->
-                        <div class="flex flex-col md:flex-row items-stretch justify-between gap-2 overflow-x-auto py-2">
-                            <div class="flex-1 bg-white border border-slate-200 p-4 rounded-xl text-center flex flex-col justify-between">
-                                <div class="text-[10px] uppercase font-bold text-slate-400">Step 1</div>
-                                <div class="font-bold text-xs text-slate-700 mt-2">Compliance Team</div>
-                                <p class="text-[10px] text-slate-400 mt-1">Confirms "OK to Pay" approved list & shares with Marketing.</p>
-                                <span class="text-lg mt-3">🤝</span>
-                            </div>
-
-                            <div class="flex items-center justify-center text-slate-300 font-bold rotate-90 md:rotate-0">➔</div>
-
-                            <div class="flex-1 bg-white border border-slate-200 p-4 rounded-xl text-center flex flex-col justify-between">
-                                <div class="text-[10px] uppercase font-bold text-slate-400">Step 2</div>
-                                <div class="font-bold text-xs text-slate-700 mt-2">Marketing Team</div>
-                                <p class="text-[10px] text-slate-400 mt-1">Verifies eligible partners and final markup numbers.</p>
-                                <span class="text-lg mt-3">📋</span>
-                            </div>
-
-                            <div class="flex items-center justify-center text-slate-300 font-bold rotate-90 md:rotate-0">➔</div>
-
-                            <div class="flex-1 bg-white border border-slate-200 p-4 rounded-xl text-center flex flex-col justify-between">
-                                <div class="text-[10px] uppercase font-bold text-slate-400">Step 3</div>
-                                <div class="font-bold text-xs text-slate-700 mt-2">Slack Submission</div>
-                                <p class="text-[10px] text-slate-400 mt-1">Marketing requests Finance in Slack <span class="text-derivRed font-medium">#partners_payment</span>.</p>
-                                <span class="text-lg mt-3">💬</span>
-                            </div>
-
-                            <div class="flex items-center justify-center text-slate-300 font-bold rotate-90 md:rotate-0">➔</div>
-
-                            <div class="flex-1 bg-white border border-slate-200 p-4 rounded-xl text-center flex flex-col justify-between">
-                                <div class="text-[10px] uppercase font-bold text-slate-400">Step 4</div>
-                                <div class="font-bold text-xs text-slate-700 mt-2">Email Assets</div>
-                                <p class="text-[10px] text-slate-400 mt-1">Supporting CSV files are sent to Finance inbox.</p>
-                                <span class="text-lg mt-3">✉️</span>
-                            </div>
-
-                            <div class="flex items-center justify-center text-slate-300 font-bold rotate-90 md:rotate-0">➔</div>
-
-                            <div class="flex-1 bg-derivDark text-white p-4 rounded-xl text-center flex flex-col justify-between">
-                                <div class="text-[10px] uppercase font-bold text-gray-400">Step 5</div>
-                                <div class="font-bold text-xs text-white mt-2">Finance Action</div>
-                                <p class="text-[10px] text-gray-400 mt-1">Credits partner account via BackOffice V1 or V2.</p>
-                                <span class="text-lg mt-3">💳</span>
-                            </div>
-                        </div>
-
-                        <div class="bg-slate-50 border border-slate-200 p-4 rounded-xl text-xs text-slate-600">
-                            <strong>Wait! What if we find a discrepancy?</strong> If details do not align during Step 5, the Finance team does not pay. They instantly report/raise an issue back in the <code class="bg-red-50 text-derivRed font-semibold px-1 rounded">#partners_payment</code> channel before proceeding.
-                        </div>
-                    </div>
-                `
-            },
-            {
                 title: "Pre-Crediting Verification Checklists",
                 subtitle: "Interactive CSV Field Validation",
                 category: "Arbitrary Markup",
@@ -486,7 +423,7 @@
                                     </label>
                                     <label class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 cursor-pointer">
                                         <input type="checkbox" class="w-4 h-4 text-derivRed rounded border-gray-300 focus:ring-derivRed">
-                                        <span><strong>Login ID</strong> (Strictly V1 identifier formatted)</span>
+                                        <span><strong>Login ID (V1)</strong> (Strictly V1 identifier formatted)</span>
                                     </label>
                                     <label class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 cursor-pointer">
                                         <input type="checkbox" class="w-4 h-4 text-derivRed rounded border-gray-300 focus:ring-derivRed">
@@ -509,11 +446,11 @@
                                     </label>
                                     <label class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 cursor-pointer">
                                         <input type="checkbox" class="w-4 h-4 text-derivRed rounded border-gray-300 focus:ring-derivRed">
-                                        <span><strong>Client ID</strong> (Strictly V2 client identification)</span>
+                                        <span><strong>Client ID (V2)</strong> (Strictly V2 client identification)</span>
                                     </label>
                                     <label class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 cursor-pointer">
                                         <input type="checkbox" class="w-4 h-4 text-derivRed rounded border-gray-300 focus:ring-derivRed">
-                                        <span><strong>Wallet ID</strong> (Settlement Wallet identifier)</span>
+                                        <span><strong>Wallet ID (V2)</strong> (Settlement Wallet identifier)</span>
                                     </label>
                                     <label class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 cursor-pointer">
                                         <input type="checkbox" class="w-4 h-4 text-derivRed rounded border-gray-300 focus:ring-derivRed">
@@ -1003,96 +940,244 @@
                 `
             },
             {
-                title: "Affiliate V1 Manual Process Flow",
-                subtitle: "Pipeline for Manual Affiliate Payments",
-                category: "Workflow",
+                title: "13-Step Verification Pipeline",
+                subtitle: "Interactive Flowchart Process",
+                category: "Verification & Payments Flow",
                 render: () => `
                     <div class="space-y-6">
-                        <div class="border-b border-gray-100 pb-4">
-                            <h2 class="text-2xl font-bold text-slate-800">Manual Affiliate Crediting Pipeline</h2>
-                            <p class="text-slate-500 text-sm">Step-by-step pipeline for manual affiliate payments in BackOffice V1:</p>
+                        <div class="border-b border-gray-100 pb-2">
+                            <h2 class="text-xl font-extrabold text-slate-950">Verification & Payment SOP Process</h2>
+                            <p class="text-slate-500 text-xs">The manual payout pipeline is strict. To avoid double payouts or errors, follow these 13 steps. <strong>Click on any step below to see a plain English explanation of what to do!</strong></p>
                         </div>
 
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <!-- Card 1 -->
-                            <div class="bg-white border border-slate-200 p-4 rounded-xl flex flex-col justify-between">
-                                <div>
-                                    <div class="text-[10px] text-derivRed font-bold uppercase tracking-widest">Phase 1</div>
-                                    <h3 class="font-bold text-slate-800 text-xs mt-1">Verification Request</h3>
-                                    <p class="text-[10px] text-slate-500 mt-2 leading-relaxed">
-                                        Marketing Team checks eligible partner amounts and submits a request to Finance in Slack <code class="bg-red-50 text-derivRed font-semibold px-0.5 rounded">#partners_payment</code>.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Card 2 -->
-                            <div class="bg-white border border-slate-200 p-4 rounded-xl flex flex-col justify-between">
-                                <div>
-                                    <div class="text-[10px] text-derivRed font-bold uppercase tracking-widest">Phase 2</div>
-                                    <h3 class="font-bold text-slate-800 text-xs mt-1">Verify Supporting Files</h3>
-                                    <p class="text-[10px] text-slate-500 mt-2 leading-relaxed">
-                                        Finance reviews the request, verifying the transaction amounts match in both the working file and the payment CSV.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Card 3 -->
-                            <div class="bg-derivDark text-white p-4 rounded-xl flex flex-col justify-between">
-                                <div>
-                                    <div class="text-[10px] text-derivRed font-bold uppercase tracking-widest">Phase 3</div>
-                                    <h3 class="font-bold text-white text-xs mt-1">Manual V1 Credit</h3>
-                                    <p class="text-[10px] text-gray-300 mt-2 leading-relaxed">
-                                        If verification succeeds, Finance proceeds to credit the manual commissions in <strong>BackOffice V1</strong>.
-                                    </p>
-                                </div>
-                            </div>
+                        <!-- 4 Phase Progress Overview Indicator -->
+                        <div class="hidden md:flex justify-between items-center bg-slate-50 p-2.5 rounded-xl border border-slate-200 text-[10px] font-bold text-slate-400">
+                            <div class="flex items-center gap-1.5 px-2 py-1 bg-blue-50 text-blue-700 rounded-lg border border-blue-100"><span class="w-2 h-2 rounded-full bg-blue-500"></span> Phase 1: Verification Gate (Steps 1-4)</div>
+                            <span class="text-slate-300">➔</span>
+                            <div class="flex items-center gap-1.5 px-2 py-1 bg-purple-50 text-purple-700 rounded-lg border border-purple-100"><span class="w-2 h-2 rounded-full bg-purple-500"></span> Phase 2: Email Prep (Steps 5-8)</div>
+                            <span class="text-slate-300">➔</span>
+                            <div class="flex items-center gap-1.5 px-2 py-1 bg-amber-50 text-amber-700 rounded-lg border border-amber-100"><span class="w-2 h-2 rounded-full bg-amber-500"></span> Phase 3: System Submit (Steps 9-11)</div>
+                            <span class="text-slate-300">➔</span>
+                            <div class="flex items-center gap-1.5 px-2 py-1 bg-emerald-50 text-emerald-700 rounded-lg border border-emerald-100"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> Phase 4: Approval & Closure (Steps 12-13)</div>
                         </div>
 
-                        <div class="bg-amber-50 border border-amber-200 p-3 rounded-lg text-xs text-amber-800 flex items-center gap-2">
-                            <span>⚠️</span>
-                            <span><strong>Important:</strong> Discrepancies stop processing! Notify the Marketing Team instantly on Slack to trace issues.</span>
+                        <!-- 13-Step Grid Visual -->
+                        <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2">
+                            <button onclick="selectPipelineStep(1)" id="step-btn-1" class="step-btn border-2 border-derivRed bg-red-50/10 p-2.5 rounded-xl text-center shadow-sm hover:shadow-md transition-all">
+                                <div class="text-[9px] font-bold text-derivRed uppercase tracking-wider">Step 1</div>
+                                <div class="font-bold text-xs text-slate-800 mt-1 truncate">Open Request</div>
+                            </button>
+                            <button onclick="selectPipelineStep(2)" id="step-btn-2" class="step-btn border border-slate-200 bg-white p-2.5 rounded-xl text-center shadow-sm hover:shadow-md transition-all">
+                                <div class="text-[9px] font-bold text-slate-400 uppercase tracking-wider">Step 2</div>
+                                <div class="font-bold text-xs text-slate-800 mt-1 truncate">Verify CSV</div>
+                            </button>
+                            <button onclick="selectPipelineStep(3)" id="step-btn-3" class="step-btn border border-slate-200 bg-white p-2.5 rounded-xl text-center shadow-sm hover:shadow-md transition-all">
+                                <div class="text-[9px] font-bold text-slate-400 uppercase tracking-wider">Step 3</div>
+                                <div class="font-bold text-xs text-slate-800 mt-1 truncate">Slack Gate</div>
+                            </button>
+                            <button onclick="selectPipelineStep(4)" id="step-btn-4" class="step-btn border border-slate-200 bg-white p-2.5 rounded-xl text-center shadow-sm hover:shadow-md transition-all">
+                                <div class="text-[9px] font-bold text-slate-400 uppercase tracking-wider">Step 4</div>
+                                <div class="font-bold text-xs text-slate-800 mt-1 truncate">Rename CSV</div>
+                            </button>
+                            <button onclick="selectPipelineStep(5)" id="step-btn-5" class="step-btn border border-slate-200 bg-white p-2.5 rounded-xl text-center shadow-sm hover:shadow-md transition-all">
+                                <div class="text-[9px] font-bold text-slate-400 uppercase tracking-wider">Step 5</div>
+                                <div class="font-bold text-xs text-slate-800 mt-1 truncate">Forward Email</div>
+                            </button>
+                            <button onclick="selectPipelineStep(6)" id="step-btn-6" class="step-btn border border-slate-200 bg-white p-2.5 rounded-xl text-center shadow-sm hover:shadow-md transition-all">
+                                <div class="text-[9px] font-bold text-slate-400 uppercase tracking-wider">Step 6</div>
+                                <div class="font-bold text-xs text-slate-800 mt-1 truncate">Add Prefix</div>
+                            </button>
+                            <button onclick="selectPipelineStep(7)" id="step-btn-7" class="step-btn border border-slate-200 bg-white p-2.5 rounded-xl text-center shadow-sm hover:shadow-md transition-all">
+                                <div class="text-[9px] font-bold text-slate-400 uppercase tracking-wider">Step 7</div>
+                                <div class="font-bold text-xs text-slate-800 mt-1 truncate">Target Teams</div>
+                            </button>
+                        </div>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
+                            <button onclick="selectPipelineStep(8)" id="step-btn-8" class="step-btn border border-slate-200 bg-white p-2.5 rounded-xl text-center shadow-sm hover:shadow-md transition-all">
+                                <div class="text-[9px] font-bold text-slate-400 uppercase tracking-wider">Step 8</div>
+                                <div class="font-bold text-xs text-slate-800 mt-1 truncate">Attach Backup</div>
+                            </button>
+                            <button onclick="selectPipelineStep(9)" id="step-btn-9" class="step-btn border border-slate-200 bg-white p-2.5 rounded-xl text-center shadow-sm hover:shadow-md transition-all">
+                                <div class="text-[9px] font-bold text-slate-400 uppercase tracking-wider">Step 9</div>
+                                <div class="font-bold text-xs text-slate-800 mt-1 truncate">Send & Copy</div>
+                            </button>
+                            <button onclick="selectPipelineStep(10)" id="step-btn-10" class="step-btn border border-slate-200 bg-white p-2.5 rounded-xl text-center shadow-sm hover:shadow-md transition-all">
+                                <div class="text-[9px] font-bold text-slate-400 uppercase tracking-wider">Step 10</div>
+                                <div class="font-bold text-xs text-slate-800 mt-1 truncate">Open Portal</div>
+                            </button>
+                            <button onclick="selectPipelineStep(11)" id="step-btn-11" class="step-btn border border-slate-200 bg-white p-2.5 rounded-xl text-center shadow-sm hover:shadow-md transition-all">
+                                <div class="text-[9px] font-bold text-slate-400 uppercase tracking-wider">Step 11</div>
+                                <div class="font-bold text-xs text-slate-800 mt-1 truncate">Submit Workflow</div>
+                            </button>
+                            <button onclick="selectPipelineStep(12)" id="step-btn-12" class="step-btn border border-slate-200 bg-white p-2.5 rounded-xl text-center shadow-sm hover:shadow-md transition-all">
+                                <div class="text-[9px] font-bold text-slate-400 uppercase tracking-wider">Step 12</div>
+                                <div class="font-bold text-xs text-slate-800 mt-1 truncate">Notify Teams</div>
+                            </button>
+                            <button onclick="selectPipelineStep(13)" id="step-btn-13" class="step-btn border border-slate-200 bg-white p-2.5 rounded-xl text-center shadow-sm hover:shadow-md transition-all">
+                                <div class="text-[9px] font-bold text-slate-400 uppercase tracking-wider">Step 13</div>
+                                <div class="font-bold text-xs text-slate-800 mt-1 truncate">All Done!</div>
+                            </button>
+                        </div>
+
+                        <!-- Step Details Display Card -->
+                        <div id="pipeline-details-box" class="bg-slate-50 p-5 rounded-2xl border border-slate-200 min-h-[160px] flex flex-col justify-between">
+                            <!-- JS updates this dynamic template -->
                         </div>
                     </div>
                 `
             },
             {
-                title: "Verification & Payment Checklist",
-                subtitle: "The File Renaming Protocol",
-                category: "Workflow",
+                title: "SOP Step-by-Step Breakdown",
+                subtitle: "Analyzing Step 1 to 4 Details",
+                category: "Verification & Payments Flow",
                 render: () => `
                     <div class="space-y-6">
                         <div class="border-b border-gray-100 pb-4">
-                            <h2 class="text-2xl font-bold text-slate-800">Operational Verification & Payments</h2>
-                            <p class="text-slate-500 text-sm">How to verify, handle, and securely process incoming payment spreadsheets:</p>
+                            <h2 class="text-2xl font-bold text-slate-800">Initial Verification Phase (Steps 1-4)</h2>
+                            <p class="text-slate-500 text-sm">Before processing any payment, we ensure data alignment with rigorous validation:</p>
                         </div>
 
-                        <div class="space-y-4">
-                            <!-- Task Step 1 -->
-                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 flex gap-4 items-start">
-                                <div class="bg-derivRed text-white font-extrabold w-6 h-6 rounded-full flex items-center justify-center text-xs">1</div>
-                                <div class="text-xs space-y-1">
-                                    <h4 class="font-bold text-slate-800 text-sm">Open & Inspect</h4>
-                                    <p class="text-slate-500 leading-normal">Open the incoming email containing the payment request and verify the attached **payment CSV file** against the core **working file** compiled by Marketing.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-white border border-slate-200 p-4 rounded-xl space-y-2">
+                                <h3 class="font-bold text-slate-800 text-xs flex items-center gap-2">
+                                    <span class="w-5 h-5 bg-derivRed text-white rounded-full flex items-center justify-center text-[10px] font-bold">1</span>
+                                    Open Incoming Request
+                                </h3>
+                                <p class="text-xs text-slate-500 leading-relaxed">Open the email containing the payment request.</p>
+                            </div>
+
+                            <div class="bg-white border border-slate-200 p-4 rounded-xl space-y-2">
+                                <h3 class="font-bold text-slate-800 text-xs flex items-center gap-2">
+                                    <span class="w-5 h-5 bg-derivRed text-white rounded-full flex items-center justify-center text-[10px] font-bold">2</span>
+                                    Compare CSV vs Working File
+                                </h3>
+                                <p class="text-xs text-slate-500 leading-relaxed">Verify the payment CSV file against the working file provided by the Marketing Team.</p>
+                            </div>
+
+                            <div class="bg-white border border-slate-200 p-4 rounded-xl space-y-2">
+                                <h3 class="font-bold text-slate-800 text-xs flex items-center gap-2">
+                                    <span class="w-5 h-5 bg-derivRed text-white rounded-full flex items-center justify-center text-[10px] font-bold">3</span>
+                                    Discrepancy Slack Gate
+                                </h3>
+                                <p class="text-xs text-slate-500 leading-relaxed">If you find any discrepancies or need clarification, notify the Marketing Team in the **#partners_payment** Slack channel before proceeding.</p>
+                            </div>
+
+                            <div class="bg-white border border-slate-200 p-4 rounded-xl space-y-2">
+                                <h3 class="font-bold text-slate-800 text-xs flex items-center gap-2">
+                                    <span class="w-5 h-5 bg-derivRed text-white rounded-full flex items-center justify-center text-[10px] font-bold">4</span>
+                                    Apply "VERIFIED_" Prefix
+                                </h3>
+                                <p class="text-xs text-slate-500 leading-relaxed">Once verified, rename the payment CSV file by adding "**VERIFIED_**" at the beginning of the filename. This indicates that the Finance Team has completed the verification.</p>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                title: "SOP Step-by-Step Breakdown",
+                subtitle: "Analyzing Step 5 to 9 Details",
+                category: "Verification & Payments Flow",
+                render: () => `
+                    <div class="space-y-6">
+                        <div class="border-b border-gray-100 pb-4">
+                            <h2 class="text-2xl font-bold text-slate-800">Email Forwarding Pipeline (Steps 5-9)</h2>
+                            <p class="text-slate-500 text-sm">Now, prepare the verified audit email chain for payment processing:</p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-white border border-slate-200 p-4 rounded-xl space-y-2">
+                                <h3 class="font-bold text-slate-800 text-xs flex items-center gap-2">
+                                    <span class="w-5 h-5 bg-slate-900 text-white rounded-full flex items-center justify-center text-[10px] font-bold">5</span>
+                                    Forward Payout Request Email
+                                </h3>
+                                <p class="text-xs text-slate-500 leading-relaxed">Forward the relevant payment request email.</p>
+                            </div>
+
+                            <div class="bg-white border border-slate-200 p-4 rounded-xl space-y-2">
+                                <h3 class="font-bold text-slate-800 text-xs flex items-center gap-2">
+                                    <span class="w-5 h-5 bg-slate-900 text-white rounded-full flex items-center justify-center text-[10px] font-bold">6</span>
+                                    Email Prefix: "VERIFIED:"
+                                </h3>
+                                <p class="text-xs text-slate-500 leading-relaxed">Update the email subject by adding the prefix "**VERIFIED:**".</p>
+                            </div>
+
+                            <div class="bg-white border border-slate-200 p-4 rounded-xl space-y-2">
+                                <h3 class="font-bold text-slate-800 text-xs flex items-center gap-2">
+                                    <span class="w-5 h-5 bg-slate-900 text-white rounded-full flex items-center justify-center text-[10px] font-bold">7</span>
+                                    Address Target Teams
+                                </h3>
+                                <p class="text-xs text-slate-500 leading-relaxed">Send the email to the **Finance Reconciliation** and **Payments** teams.</p>
+                            </div>
+
+                            <div class="bg-white border border-slate-200 p-4 rounded-xl space-y-2">
+                                <h3 class="font-bold text-slate-800 text-xs flex items-center gap-2">
+                                    <span class="w-5 h-5 bg-slate-900 text-white rounded-full flex items-center justify-center text-[10px] font-bold">8</span>
+                                    Attach Verification Assets
+                                </h3>
+                                <div class="text-xs text-slate-500 leading-relaxed space-y-1">
+                                    <span>Attach the following to the email:</span>
+                                    <ul class="list-disc pl-4 font-semibold text-slate-700">
+                                        <li>Verified payment CSV file</li>
+                                        <li>Screenshots of any supporting information (e.g. V2 request approval in the DCC Tool, V1 DCC request/code, or any other relevant approvals)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-50 p-4 border border-slate-200 rounded-xl text-xs text-slate-600">
+                            <strong>Step 9 - Send & Copy:</strong> Send the email and copy the email subject. You will paste this subject inside the portal workflow form tracking system!
+                        </div>
+                    </div>
+                `
+            },
+            {
+                title: "SOP Step-by-Step Breakdown",
+                subtitle: "Analyzing Step 10 to 13 Details",
+                category: "Verification & Payments Flow",
+                render: () => `
+                    <div class="space-y-6">
+                        <div class="border-b border-gray-100 pb-4">
+                            <h2 class="text-2xl font-bold text-slate-800">Clearing & Reconciliation (Steps 10-13)</h2>
+                            <p class="text-slate-500 text-sm">Submit the workflow request and notify stakeholders of completion:</p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-white border border-slate-200 p-4 rounded-xl space-y-2">
+                                <h3 class="font-bold text-slate-800 text-xs flex items-center gap-2">
+                                    <span class="w-5 h-5 bg-amber-500 text-white rounded-full flex items-center justify-center text-[10px] font-bold">10</span>
+                                    Go to accs_recon_partners
+                                </h3>
+                                <p class="text-xs text-slate-500 leading-relaxed">Go to **accs_recon_partners** and open the workflow "**Arb Markup and Affiliate - Verification and Payment**".</p>
+                            </div>
+
+                            <div class="bg-white border border-slate-200 p-4 rounded-xl space-y-2">
+                                <h3 class="font-bold text-slate-800 text-xs flex items-center gap-2">
+                                    <span class="w-5 h-5 bg-amber-500 text-white rounded-full flex items-center justify-center text-[10px] font-bold">11</span>
+                                    Submit Workflow Form
+                                </h3>
+                                <div class="text-xs text-slate-500 leading-relaxed">
+                                    <span>Submit the workflow. Another member of the Reconciliation team will:</span>
+                                    <ul class="list-disc pl-4 font-semibold text-slate-700 mt-1">
+                                        <li>Generate the DCC request for **BackOffice V1**, and</li>
+                                        <li>Approve the payment in **BackOffice V2**.</li>
+                                    </ul>
                                 </div>
                             </div>
 
-                            <!-- Task Step 2 -->
-                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 flex gap-4 items-start">
-                                <div class="bg-derivRed text-white font-extrabold w-6 h-6 rounded-full flex items-center justify-center text-xs">2</div>
-                                <div class="text-xs space-y-1">
-                                    <h4 class="font-bold text-slate-800 text-sm">Slack Discrepancy Gate</h4>
-                                    <p class="text-slate-500 leading-normal">If you identify differences, immediately halt. Message Marketing on the <span class="text-derivRed font-semibold">#partners_payment</span> Slack channel to align figures.</p>
-                                </div>
+                            <div class="bg-white border border-slate-200 p-4 rounded-xl space-y-2">
+                                <h3 class="font-bold text-slate-800 text-xs flex items-center gap-2">
+                                    <span class="w-5 h-5 bg-amber-500 text-white rounded-full flex items-center justify-center text-[10px] font-bold">12</span>
+                                    Notify Marketing Aligns
+                                </h3>
+                                <p class="text-xs text-slate-500 leading-relaxed">Once the payment has been completed, notify the Marketing Team in both the **email thread** and the **#partners_payment** Slack channel.</p>
                             </div>
 
-                            <!-- Task Step 3 -->
-                            <div class="bg-white p-4 rounded-xl border-2 border-dashed border-derivRed/40 flex gap-4 items-start">
-                                <div class="bg-derivRed text-white font-extrabold w-6 h-6 rounded-full flex items-center justify-center text-xs">3</div>
-                                <div class="text-xs space-y-1">
-                                    <h4 class="font-bold text-slate-800 text-sm">The "VERIFIED_" Naming Protocol</h4>
-                                    <p class="text-slate-600 leading-normal font-medium">Once everything is successfully matched, rename the payment CSV file by adding the prefix <code class="bg-slate-100 text-slate-800 border border-slate-200 px-1.5 py-0.5 rounded font-bold">VERIFIED_</code> to the beginning of the filename.</p>
-                                    <p class="text-slate-400 text-[10px] mt-1">This critical visual marker signals to downstream systems and reconciliation units that Finance checks are fully cleared.</p>
-                                </div>
+                            <div class="bg-white border border-slate-200 p-4 rounded-xl space-y-2">
+                                <h3 class="font-bold text-slate-800 text-xs flex items-center gap-2">
+                                    <span class="w-5 h-5 bg-amber-500 text-white rounded-full flex items-center justify-center text-[10px] font-bold">13</span>
+                                    Process Completed
+                                </h3>
+                                <p class="text-xs text-slate-500 leading-relaxed">Process completed. Both V1 (DSVG) and V2 (DCI) manual credits are synchronized successfully.</p>
                             </div>
                         </div>
                     </div>
@@ -1234,6 +1319,193 @@ Finance Officer</textarea>
         let currentSlide = 0;
         const visitedSlides = new Set([0]);
 
+        // 13-Step Pipeline Selection Interactivity
+        function selectPipelineStep(stepNum) {
+            // Un-highlight all step buttons
+            document.querySelectorAll('.step-btn').forEach(btn => {
+                btn.classList.remove('border-derivRed', 'bg-red-50/10');
+                btn.classList.add('border-slate-200', 'bg-white');
+                const label = btn.querySelector('div:first-child');
+                if (label) {
+                    label.classList.remove('text-derivRed');
+                    label.classList.add('text-slate-400');
+                }
+            });
+
+            // Highlight current clicked step button
+            const activeBtn = document.getElementById(`step-btn-${stepNum}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('border-slate-200', 'bg-white');
+                activeBtn.classList.add('border-derivRed', 'bg-red-50/10');
+                const label = activeBtn.querySelector('div:first-child');
+                if (label) {
+                    label.classList.remove('text-slate-400');
+                    label.classList.add('text-derivRed');
+                }
+            }
+
+            const box = document.getElementById('pipeline-details-box');
+            if (!box) return;
+
+            // Update content details based on clicked index directly from image_a0f93c.png
+            let content = '';
+            switch (stepNum) {
+                case 1:
+                    content = `
+                        <div class="flex items-start gap-4">
+                            <span class="bg-derivRed text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">1</span>
+                            <div class="space-y-1">
+                                <h4 class="font-bold text-slate-900 text-sm">Open request email</h4>
+                                <p class="text-xs text-slate-600 leading-relaxed">Open the email containing the payment request.</p>
+                                <p class="text-[10px] text-slate-400 mt-1"><strong>Action:</strong> Review & Cross-Match phase initiation</p>
+                            </div>
+                        </div>`;
+                    break;
+                case 2:
+                    content = `
+                        <div class="flex items-start gap-4">
+                            <span class="bg-derivRed text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">2</span>
+                            <div class="space-y-1">
+                                <h4 class="font-bold text-slate-900 text-sm">Verify payment CSV vs working file</h4>
+                                <p class="text-xs text-slate-600 leading-relaxed">Verify the payment CSV file against the working file provided by the Marketing Team.</p>
+                                <p class="text-[10px] text-slate-400 mt-1"><strong>SOP Check:</strong> Check amounts, IDs, and currencies precisely</p>
+                            </div>
+                        </div>`;
+                    break;
+                case 3:
+                    content = `
+                        <div class="flex items-start gap-4">
+                            <span class="bg-derivRed text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">3</span>
+                            <div class="space-y-1">
+                                <h4 class="font-bold text-slate-900 text-sm">Discrepancy Check Slack Gate</h4>
+                                <p class="text-xs text-slate-600 leading-relaxed">If you find any discrepancies or need clarification, notify the Marketing Team in the <span class="text-derivRed font-semibold">#partners_payment</span> Slack channel before proceeding.</p>
+                                <p class="text-[10px] text-slate-400 mt-1"><strong>Operational Rule:</strong> Do not proceed with payment executions while discrepancies exist</p>
+                            </div>
+                        </div>`;
+                    break;
+                case 4:
+                    content = `
+                        <div class="flex items-start gap-4">
+                            <span class="bg-derivRed text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">4</span>
+                            <div class="space-y-1">
+                                <h4 class="font-bold text-slate-900 text-sm">Apply the "VERIFIED_" Naming Protocol</h4>
+                                <p class="text-xs text-slate-600 leading-relaxed">Once verified, rename the payment CSV file by adding "**VERIFIED_**" at the beginning of the filename. This indicates that the Finance Team has completed the verification.</p>
+                                <p class="text-[10px] text-slate-400 mt-1"><strong>Indicator:</strong> Signifies checked status for secondary reconcilers</p>
+                            </div>
+                        </div>`;
+                    break;
+                case 5:
+                    content = `
+                        <div class="flex items-start gap-4">
+                            <span class="bg-derivRed text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">5</span>
+                            <div class="space-y-1">
+                                <h4 class="font-bold text-slate-900 text-sm">Forward request email</h4>
+                                <p class="text-xs text-slate-600 leading-relaxed">Forward the relevant payment request email.</p>
+                                <p class="text-[10px] text-slate-400 mt-1"><strong>Action:</strong> Start execution hand-off dispatch</p>
+                            </div>
+                        </div>`;
+                    break;
+                case 6:
+                    content = `
+                        <div class="flex items-start gap-4">
+                            <span class="bg-derivRed text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">6</span>
+                            <div class="space-y-1">
+                                <h4 class="font-bold text-slate-900 text-sm">Update Subject: "VERIFIED:"</h4>
+                                <p class="text-xs text-slate-600 leading-relaxed">Update the email subject by adding the prefix "**VERIFIED:**".</p>
+                                <p class="text-[10px] text-slate-400 mt-1"><strong>Subject Line Rule:</strong> Helps recipient teams filter payment actions easily</p>
+                            </div>
+                        </div>`;
+                    break;
+                case 7:
+                    content = `
+                        <div class="flex items-start gap-4">
+                            <span class="bg-derivRed text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">7</span>
+                            <div class="space-y-1">
+                                <h4 class="font-bold text-slate-900 text-sm">Address Target Teams</h4>
+                                <p class="text-xs text-slate-600 leading-relaxed">Send the email to the **Finance Reconciliation** and **Payments** teams.</p>
+                                <p class="text-[10px] text-slate-400 mt-1"><strong>To Recipients:</strong> Direct dispatch lines</p>
+                            </div>
+                        </div>`;
+                    break;
+                case 8:
+                    content = `
+                        <div class="flex items-start gap-4">
+                            <span class="bg-derivRed text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">8</span>
+                            <div class="space-y-2">
+                                <h4 class="font-bold text-slate-900 text-sm">Attach Verification & supporting assets</h4>
+                                <p class="text-xs text-slate-600 leading-relaxed">Attach the following to the email:</p>
+                                <ul class="list-disc pl-4 text-xs text-slate-600 space-y-1 bg-white p-3 rounded-lg border border-slate-100">
+                                    <li><strong>Verified payment CSV file</strong> (renamed with VERIFIED_ prefix)</li>
+                                    <li><strong>Screenshots of any supporting information</strong> (e.g. V2 request approval in the DCC Tool, V1 DCC request/code, or any other relevant approvals)</li>
+                                </ul>
+                            </div>
+                        </div>`;
+                    break;
+                case 9:
+                    content = `
+                        <div class="flex items-start gap-4">
+                            <span class="bg-derivRed text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">9</span>
+                            <div class="space-y-1">
+                                <h4 class="font-bold text-slate-900 text-sm">Send & Copy Subject</h4>
+                                <p class="text-xs text-slate-600 leading-relaxed">Send the email and copy the email subject.</p>
+                                <p class="text-[10px] text-slate-400 mt-1"><strong>Audit SOP:</strong> Subject string acts as the reconciliation key</p>
+                            </div>
+                        </div>`;
+                    break;
+                case 10:
+                    content = `
+                        <div class="flex items-start gap-4">
+                            <span class="bg-derivRed text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">10</span>
+                            <div class="space-y-1">
+                                <h4 class="font-bold text-slate-900 text-sm">Go to accs_recon_partners</h4>
+                                <p class="text-xs text-slate-600 leading-relaxed">Go to **accs_recon_partners** and open the workflow "**Arb Markup and Affiliate - Verification and Payment**".</p>
+                                <p class="text-[10px] text-slate-400 mt-1"><strong>Action:</strong> Register payment workflow case log</p>
+                            </div>
+                        </div>`;
+                    break;
+                case 11:
+                    content = `
+                        <div class="flex items-start gap-4">
+                            <span class="bg-derivRed text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">11</span>
+                            <div class="space-y-2">
+                                <h4 class="font-bold text-slate-900 text-sm">Submit the Workflow Form</h4>
+                                <p class="text-xs text-slate-600 leading-relaxed">Submit the workflow. Another member of the Reconciliation team will execute the Maker-Checker steps:</p>
+                                <ul class="list-disc pl-4 text-xs text-slate-600 space-y-1 bg-white p-3 rounded-lg border border-slate-100">
+                                    <li>Generate the DCC request for <strong>BackOffice V1</strong>, and</li>
+                                    <li>Approve the payment in <strong>BackOffice V2</strong>.</li>
+                                </ul>
+                            </div>
+                        </div>`;
+                    break;
+                case 12:
+                    content = `
+                        <div class="flex items-start gap-4">
+                            <span class="bg-derivRed text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">12</span>
+                            <div class="space-y-2">
+                                <h4 class="font-bold text-slate-900 text-sm">Notify Teams and Marketing</h4>
+                                <p class="text-xs text-slate-600 leading-relaxed">Once the payment has been completed, notify the Marketing Team immediately through both channels:</p>
+                                <ul class="list-disc pl-4 text-xs text-slate-600 space-y-1 bg-white p-3 rounded-lg border border-slate-100">
+                                    <li>Directly reply-all on the <strong>email thread</strong></li>
+                                    <li>Post a quick confirmation update in the <strong>#partners_payment</strong> Slack channel</li>
+                                </ul>
+                            </div>
+                        </div>`;
+                    break;
+                case 13:
+                    content = `
+                        <div class="flex items-start gap-4">
+                            <span class="bg-derivRed text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">13</span>
+                            <div class="space-y-1">
+                                <h4 class="font-bold text-slate-900 text-sm">Process completed</h4>
+                                <p class="text-xs text-slate-600 leading-relaxed">Process completed. Partner payment run cycles have cleared reconciliation compliance logs successfully.</p>
+                                <p class="text-[10px] text-emerald-600 mt-1 font-semibold">✓ Workflow execution run finished</p>
+                            </div>
+                        </div>`;
+                    break;
+            }
+            box.innerHTML = content;
+        }
+
         // Scenario Interactivity (Slide 3)
         function selectScenario(scenNum) {
             document.querySelectorAll('.scenario-card').forEach(card => {
@@ -1245,17 +1517,20 @@ Finance Officer</textarea>
             });
 
             const activeCard = document.getElementById(`scen-${scenNum}`);
-            activeCard.classList.remove('border-slate-200', 'bg-white');
-            activeCard.classList.add('border-derivRed', 'bg-red-50/10');
-            activeCard.querySelector('.w-6').classList.remove('bg-slate-100', 'text-slate-400');
-            activeCard.querySelector('.w-6').classList.add('bg-derivRed', 'text-white');
-            activeCard.querySelector('.w-6').innerText = '✓';
+            if (activeCard) {
+                activeCard.classList.remove('border-slate-200', 'bg-white');
+                activeCard.classList.add('border-derivRed', 'bg-red-50/10');
+                activeCard.querySelector('.w-6').classList.remove('bg-slate-100', 'text-slate-400');
+                activeCard.querySelector('.w-6').classList.add('bg-derivRed', 'text-white');
+                activeCard.querySelector('.w-6').innerText = '✓';
+            }
 
             const box = document.getElementById('scenario-details-box');
+            if (!box) return;
             const title = document.getElementById('scen-detail-title');
 
             if (scenNum === 1) {
-                title.innerText = "Scenario A: Partner + App Developer";
+                if (title) title.innerText = "Scenario A: Partner + App Developer";
                 box.innerHTML = `
                     <h4 class="text-sm font-bold text-slate-900">Scenario A: Partner + App Developer Details</h4>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
@@ -1278,7 +1553,7 @@ Finance Officer</textarea>
                     </div>
                 `;
             } else if (scenNum === 2) {
-                title.innerText = "Scenario B: App Developer Only";
+                if (title) title.innerText = "Scenario B: App Developer Only";
                 box.innerHTML = `
                     <h4 class="text-sm font-bold text-slate-900">Scenario B: App Developer Only Details</h4>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
@@ -1301,7 +1576,7 @@ Finance Officer</textarea>
                     </div>
                 `;
             } else if (scenNum === 3) {
-                title.innerText = "Scenario C: Partner Only";
+                if (title) title.innerText = "Scenario C: Partner Only";
                 box.innerHTML = `
                     <h4 class="text-sm font-bold text-slate-900">Scenario C: Partner Only Details</h4>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
@@ -1381,8 +1656,10 @@ Finance Officer</textarea>
                 summary = `Based on sub-partners earning a total of $${subEarnings.toFixed(2)}, your 20% Master Partner commission tier is **$${result.toFixed(2)} USD**.`;
             }
 
-            document.getElementById('calc-result-display').innerText = `$${result.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-            document.getElementById('calc-summary-text').innerHTML = summary;
+            const disp = document.getElementById('calc-result-display');
+            if (disp) disp.innerText = `$${result.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+            const sum = document.getElementById('calc-summary-text');
+            if (sum) sum.innerHTML = summary;
         }
 
         // Partner Tier Selection (Slide 13)
@@ -1393,10 +1670,13 @@ Finance Officer</textarea>
             });
 
             const activeBox = document.getElementById(`tier-${tier}`);
-            activeBox.classList.remove('border-slate-200');
-            activeBox.classList.add('border-derivRed', 'shadow-md');
+            if (activeBox) {
+                activeBox.classList.remove('border-slate-200');
+                activeBox.classList.add('border-derivRed', 'shadow-md');
+            }
 
             const details = document.getElementById('tier-details');
+            if (!details) return;
             if (tier === 'bronze') {
                 details.innerHTML = `
                     <h4 class="font-bold text-slate-800 text-sm">Bronze Tier Requirements</h4>
@@ -1487,10 +1767,10 @@ Finance Officer</textarea>
                 correct: 1
             },
             {
-                q: "5. In the payment workflow, what is the very last step after a payment is successfully completed?",
+                q: "5. In the payment workflow, what is the very last step after a payment has been completed?",
                 options: [
                     "Submit the accs_recon_partners workflow request",
-                    "Notify the Marketing Team in the email thread and in the #partners_payment Slack channel",
+                    "Notify the Marketing Team in both the email thread and the #partners_payment Slack channel",
                     "Delete the verified CSV files from the local environment",
                     "Wait for the next quarterly bonus period"
                 ],
@@ -1638,8 +1918,10 @@ Finance Officer</textarea>
 
             // Update Progress Percentage
             const progressPct = Math.round((visitedSlides.size / slides.length) * 100);
-            document.getElementById('progress-text').innerText = `${progressPct}%`;
-            document.getElementById('progress-bar').style.width = `${progressPct}%`;
+            const textEl = document.getElementById('progress-text');
+            if (textEl) textEl.innerText = `${progressPct}%`;
+            const barEl = document.getElementById('progress-bar');
+            if (barEl) barEl.style.width = `${progressPct}%`;
         }
 
         function goToSlide(idx) {
@@ -1647,7 +1929,8 @@ Finance Officer</textarea>
             visitedSlides.add(idx);
             
             // Render basic UI items
-            document.getElementById('current-slide-num').innerText = idx + 1;
+            const currentNum = document.getElementById('current-slide-num');
+            if (currentNum) currentNum.innerText = idx + 1;
             
             // Build viewport layout content
             const slide = slides[idx];
@@ -1676,27 +1959,33 @@ Finance Officer</textarea>
             // Setup state dependent rendering triggers
             if (idx === 10) { // Slide index 10 is the dynamic calculator
                 injectCalculatorInputs();
-            } else if (idx === 19) { // Slide index 19 is the interactive quiz
+            } else if (idx === 14) { // Slide index 14 is the 13-Step Flow Process
+                selectPipelineStep(1);
+            } else if (idx === 20) { // Slide index 20 is the interactive quiz
                 renderQuiz();
             }
 
             // Disable/Enable footer buttons
-            document.getElementById('prev-btn').disabled = idx === 0;
+            const prevBtn = document.getElementById('prev-btn');
+            if (prevBtn) prevBtn.disabled = idx === 0;
             const nextBtn = document.getElementById('next-btn');
-            if (idx === slides.length - 1) {
-                nextBtn.innerHTML = `Finish Onboarding <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>`;
-            } else {
-                nextBtn.innerHTML = `Next <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>`;
+            if (nextBtn) {
+                if (idx === slides.length - 1) {
+                    nextBtn.innerHTML = `Finish Onboarding <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>`;
+                } else {
+                    nextBtn.innerHTML = `Next <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>`;
+                }
             }
 
             renderNav();
             
             // Smoothly scroll the stage up to the top of new slide content on load
-            document.getElementById('slide-stage').scrollTop = 0;
+            const stage = document.getElementById('slide-stage');
+            if (stage) stage.scrollTop = 0;
             
             // On mobile, close sidebar after clicking
             const sidebar = document.getElementById('sidebar');
-            if (window.innerWidth < 768 && !sidebar.classList.contains('-translate-x-full')) {
+            if (window.innerWidth < 768 && sidebar && !sidebar.classList.contains('-translate-x-full')) {
                 toggleSidebar();
             }
         }
@@ -1705,8 +1994,8 @@ Finance Officer</textarea>
             if (currentSlide < slides.length - 1) {
                 goToSlide(currentSlide + 1);
             } else {
-                // Final onboarding finish trigger (Go to slide index 19 / Quiz)
-                goToSlide(19);
+                // Final onboarding finish trigger (Go to slide index 20 / Quiz)
+                goToSlide(20);
             }
         }
 
@@ -1720,18 +2009,21 @@ Finance Officer</textarea>
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
             const overlay = document.getElementById('sidebar-overlay');
-            if (sidebar.classList.contains('-translate-x-full')) {
-                sidebar.classList.remove('-translate-x-full');
-                overlay.classList.remove('hidden');
-            } else {
-                sidebar.classList.add('-translate-x-full');
-                overlay.classList.add('hidden');
+            if (sidebar && overlay) {
+                if (sidebar.classList.contains('-translate-x-full')) {
+                    sidebar.classList.remove('-translate-x-full');
+                    overlay.classList.remove('hidden');
+                } else {
+                    sidebar.classList.add('-translate-x-full');
+                    overlay.classList.add('hidden');
+                }
             }
         }
 
         // Standard Launch setup trigger
         window.onload = function () {
-            document.getElementById('total-slides-num').innerText = slides.length;
+            const totalEl = document.getElementById('total-slides-num');
+            if (totalEl) totalEl.innerText = slides.length;
             goToSlide(0);
         };
     </script>
